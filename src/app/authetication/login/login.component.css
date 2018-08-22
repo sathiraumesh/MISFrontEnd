@@ -1,0 +1,22 @@
+.login-card{
+    margin-top: 15vh;
+    min-height:500px;
+    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+    
+}
+
+.error-label{
+    margin-bottom: 0px;
+    color: red;
+}
+.login-component{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.custom-mat-card{
+    min-height: 500px;
+    padding-top: 100px;
+}
+.login-header{
+    text-align: center;
+}
