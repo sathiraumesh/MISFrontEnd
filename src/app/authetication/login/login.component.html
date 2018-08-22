@@ -9,15 +9,24 @@
           <h4>Login</h4>
         </mat-card-header>
         <mat-card-content class="col-12 col-sm-12 col-md-12 col-lg-12  login-component">
-          <form #f="ngForm" class="col-12 col-sm-12 col-md-12 col-lg-12 login-component ">
+          <form #f="ngForm" class="col-12 col-sm-12 col-md-12 col-lg-12 login-component " (ngSubmit)="login()">
             <mat-form-field class="col-12 col-sm-12 col-md-12 col-lg-12  login-component">
-              <input matInput type="text" placeholder="Enter User Name" name="username" [(ngModel)]="username" class="col-12 col-sm-12 col-md-12 col-lg-12 login-component " required>
+              <input matInput type="text" placeholder="Enter User Name" name="username" [(ngModel)]="user.username" class="col-12 col-sm-12 col-md-12 col-lg-12 login-component" required >
+              <mat-error>
+                  username is  <strong> required</strong>
+              </mat-error>
             </mat-form-field>
             <mat-form-field class="example-full-width" class="col-12 col-sm-12 col-md-12 col-lg-12  login-component">
-              <input matInput type="password" placeholder="Enter Your Password" name="password" name="password" [(ngModel)]="password" class="col-12 col-sm-12 col-md-12 col-lg-12  login-component"
+              <input matInput type="password" placeholder="Enter Your Password" name="password" name="password" [(ngModel)]="user.password" class="col-12 col-sm-12 col-md-12 col-lg-12  login-component"
                 required>
+              <mat-error>
+                  password is  <strong> required</strong>
+              </mat-error>
             </mat-form-field>
             <div>
+                <mat-error *ngIf="authError">
+                    <strong> {{authError}}</strong>
+                </mat-error>
               <button type="submit" mat-raised-button color="primary">Login</button>
             </div>
           </form>

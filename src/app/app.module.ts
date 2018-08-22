@@ -7,6 +7,7 @@ import { AppRouteModule } from './app.route.module';
 import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModules } from './material';
+import { HttpClientModule } from '../../node_modules/@angular/common/http';
 
 
 
@@ -21,7 +22,8 @@ import { MaterialModules } from './material';
     AppRouteModule,
     FormsModule,
     MaterialModules,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
    
    
   ],
