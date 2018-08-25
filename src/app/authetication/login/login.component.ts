@@ -7,36 +7,38 @@ import { AuthenticationService } from '../authentication.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent implements OnInit {
 
 
-  authError:string;
+  authError: string;
 
-  user:User ={
-  username:"",
-  password:""
+  user: User = {
+    username: "",
+    password: ""
   };
 
-  
+  constructor(private authService: AuthenticationService) { }
 
-  constructor(private authService:AuthenticationService) { }
 
   ngOnInit() {
   }
 
-
-  login(){
-    this.authService.login(this.user).subscribe(res=>{
-      if(res.message){
-        console.log(res.message);
-        this.authError=res.message;
+  login() {
+    this.authService.login(this.user).subscribe(
+      data => {
+        this.authError = "";
+        localStorage.setItem("token",data.token);
+        console.log(data);
+      },
+      err => {
+        this.authError = err.error.errors[0];
+        console.log(err.error.errors[0]);
       }
-      
-    });
+    );
   }
 
 
-  
+
 
 
 }
