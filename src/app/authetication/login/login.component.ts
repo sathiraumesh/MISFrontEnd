@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models';
 import { AuthenticationService } from '../authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,10 +18,12 @@ export class LoginComponent implements OnInit {
     password: ""
   };
 
-  constructor(private authService: AuthenticationService) { }
+  constructor(private authService: AuthenticationService,private router:Router) { }
 
 
   ngOnInit() {
+
+    this.authService.logout();
   }
 
   login() {
@@ -28,7 +31,7 @@ export class LoginComponent implements OnInit {
       data => {
         this.authError = "";
         localStorage.setItem("token",data.token);
-        console.log(data);
+        this.router.navigate(["/drugs"]);
       },
       err => {
         this.authError = err.error.errors[0];

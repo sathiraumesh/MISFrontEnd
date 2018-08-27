@@ -8,6 +8,7 @@ export class AuthGaurd implements CanActivate{
     constructor (private authService:AuthenticationService,private router:Router){}
 
     canActivate():boolean{
+        
        if(this.authService.loggedIn()){
            return true;
        }
