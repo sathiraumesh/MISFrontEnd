@@ -30,12 +30,12 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.user).subscribe(
       data => {
         this.authError = "";
+          // console.log(data);
         localStorage.setItem("token",data.token);
         this.router.navigate(["/drugs"]);
       },
       err => {
         this.authError = err.error.errors[0];
-        console.log(err.error.errors[0]);
       }
     );
   }
