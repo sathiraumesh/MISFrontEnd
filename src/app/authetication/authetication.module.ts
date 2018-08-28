@@ -4,7 +4,7 @@ import { LoginComponent } from './login/login.component';
 import {FormsModule} from '@angular/forms';
 import { MaterialModules } from '../material';
 import { AuthenticationService } from './authentication.service';
-import { UserAuthGaurd } from './login/auth.gaurd';
+import { UserAuthGaurd } from './auth.gaurd';
 
 
 

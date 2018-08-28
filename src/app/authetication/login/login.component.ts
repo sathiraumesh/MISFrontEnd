@@ -23,18 +23,15 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit() {
-
     this.authService.logout();
   }
 
+// function used to log the user in when user clicks the button
   login() {
     this.authService.login(this.user).subscribe(
-      data => {
-        this.authError = "";
-          // console.log(data);
+      data => { 
         localStorage.setItem("token",data.token);
-        console.log(this.authService.getUserpermissions());
-        this.router.navigate(["/drugs"]);
+        this.authService.authenticateUser();
       },
       err => {
         this.authError = err.error.errors[0];
