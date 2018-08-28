@@ -15,7 +15,8 @@ export class LoginComponent implements OnInit {
 
   user: User = {
     username: "",
-    password: ""
+    password: "",
+    role:0
   };
 
   constructor(private authService: AuthenticationService,private router:Router) { }
@@ -32,6 +33,7 @@ export class LoginComponent implements OnInit {
         this.authError = "";
           // console.log(data);
         localStorage.setItem("token",data.token);
+        console.log(this.authService.getUserpermissions());
         this.router.navigate(["/drugs"]);
       },
       err => {
