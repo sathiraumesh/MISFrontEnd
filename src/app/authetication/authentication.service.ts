@@ -23,9 +23,11 @@ export class AuthenticationService {
   authenticateUser() {
     if (this.getUserpermissions() === 1) {
       console.log(this.getUserpermissions());
+      console.log(this.getUserId());
       this.router.navigate(["/drugs"]);
     }
     else if (this.getUserpermissions() === 2) {
+      console.log(this.getUserId());
       console.log(this.getUserpermissions());
       this.router.navigate(["/admin"]);
 
@@ -41,6 +43,12 @@ export class AuthenticationService {
       return this.getDecodedAccessToken(localStorage.getItem("token")).role;
     } else {
 
+    }
+  }
+
+  getUserId(){
+    if(this.loggedIn()){
+      return this.getDecodedAccessToken(localStorage.getItem("token")).id;
     }
   }
 

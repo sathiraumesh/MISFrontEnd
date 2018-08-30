@@ -8,6 +8,7 @@ import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModules } from './material';
 import { HttpClientModule } from '../../node_modules/@angular/common/http';
+import { CoreModule } from './core/core.module';
 
 
 
@@ -23,7 +24,8 @@ import { HttpClientModule } from '../../node_modules/@angular/common/http';
     FormsModule,
     MaterialModules,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    CoreModule
    
    
   ],
