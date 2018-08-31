@@ -21,5 +21,9 @@ export class UserService {
   getUsers(){
     return this.http.get<any>("api/users");
   }
+
+  addUser(user){
+    return this.http.post<any>("api/users",user);
+  }
   
 }
