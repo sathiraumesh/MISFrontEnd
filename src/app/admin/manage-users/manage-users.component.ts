@@ -11,7 +11,7 @@ export class ManageUsersComponent implements OnInit {
   constructor(private userService:UserService) { }
  users;
   ngOnInit() {
-    this.getUsers()
+    this.getUsers();
   }
   getUsers(){
     this.userService.getUsers().subscribe(data=>{

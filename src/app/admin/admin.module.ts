@@ -6,6 +6,9 @@ import { AdminModuleRoutes } from './admin.module.routes';
 import { MaterialModules } from '../material';
 import { CoreModule } from '../core/core.module';
 import { ManageUsersComponent } from './manage-users/manage-users.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -13,7 +16,9 @@ import { ManageUsersComponent } from './manage-users/manage-users.component';
     CommonModule,
     AdminModuleRoutes,
     MaterialModules,
-    CoreModule
+    CoreModule,
+    FlexLayoutModule,
+    FormsModule
   ],
   declarations: [AdminComponent, HomeComponent, ManageUsersComponent]
 })

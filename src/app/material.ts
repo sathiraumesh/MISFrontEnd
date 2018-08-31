@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
-import {MatButtonModule} from '@angular/material';
+import {MatButtonModule, MatNativeDateModule} from '@angular/material';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+    
 
 @NgModule({
   imports: [
@@ -15,7 +18,11 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatCardModule,
     MatSidenavModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
+    
 ],
   exports:[
     MatButtonModule,
@@ -24,8 +31,12 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatCardModule,
     MatSidenavModule,
     MatIconModule,
-    MatToolbarModule
-]
+    MatToolbarModule,
+    MatSelectModule,
+    MatDatepickerModule
+    
+],
+providers:[MatNativeDateModule]
 })
 
 export class MaterialModules{

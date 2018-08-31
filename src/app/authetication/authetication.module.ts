@@ -5,6 +5,7 @@ import {FormsModule} from '@angular/forms';
 import { MaterialModules } from '../material';
 import { AuthenticationService } from './authentication.service';
 import { UserAuthGaurd } from './auth.gaurd';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
@@ -15,6 +16,7 @@ import { UserAuthGaurd } from './auth.gaurd';
     CommonModule,
     FormsModule,
     MaterialModules,
+    FlexLayoutModule
     
    
   ],

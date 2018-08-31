@@ -1,4 +1,63 @@
-<p>
-  manage-users works!
-</p>
-{{users|json}}
+
+<div class="parent-container" fxLayout="row" fxLayoutAlign="center">
+
+  <div fxLayout="row" fxFlex="80" fxLayoutAlign="strech">
+    <mat-card fxFlex="100" fxLayout="column" fxLayoutAlign="none strech">
+      <mat-card-header>
+        Add user
+      </mat-card-header>
+
+      <mat-card-content fxLayout="column" fxLayoutAlign="none strech">
+        <form #frm="ngForm" fxLayout="column">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="First Name">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Last Name">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="email">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-select [(value)]="selected" placeholder="Role">
+              <mat-option value="Doctor">Doctor </mat-option>
+              <mat-option value="Nurse">Nurse </mat-option>
+              <mat-option value="Inventory Contoller">Inventory controler </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-select [(value)]="selected" placeholder="Gender">
+              <mat-option value="Male">Male </mat-option>
+              <mat-option value="Female">Female </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Date of birth">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field>
+          <span matPrefix>+94 &nbsp;</span>
+          <input type="tel" matInput placeholder="Telephone">
+          <mat-icon matSuffix>mode_edit</mat-icon>
+          </mat-form-field>
+
+          <div fxLayout="row">
+            <button mat-raised-button color="primary" fxFlex="40">Add User</button>
+          </div>
+
+
+        </form>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+
+
+  <!-- {{users|json}} -->

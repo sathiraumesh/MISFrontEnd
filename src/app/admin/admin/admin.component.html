@@ -1,10 +1,14 @@
-<mat-toolbar color="primary">
-    <mat-icon class="example-icon">delete</mat-icon>
-  <span class="example-spacer"></span>
-  <button type="submit" mat-raised-button color="warn">Logout</button>
+<mat-toolbar color="primary" class="cus-nav-bar">
+  <div fxHide.xs="false" fxHide.gt-xs="true">sss </div>
+
+  <div></div>
+
+  <div fxHide.xs="true">
+      <a [routerLink]="['/admin/home']"><button mat-button>  Home</button></a> 
+      <a [routerLink]="['/admin/manageusers']"><button mat-button> Users</button></a>
+    <button mat-button>Patients</button>
+  </div>
+
 </mat-toolbar>
-<mat-sidenav-container class="example-container" >
-  <mat-sidenav mode="side" opened>Sidenav content</mat-sidenav>
-  <mat-sidenav-content>Main content</mat-sidenav-content>
-</mat-sidenav-container>
+
 <router-outlet></router-outlet>

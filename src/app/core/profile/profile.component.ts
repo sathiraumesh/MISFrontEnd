@@ -14,8 +14,8 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
    this.userId=this.userService.getUserId();
+    console.log(this.userId);
    this.getUserData();
-   
    
   }
 

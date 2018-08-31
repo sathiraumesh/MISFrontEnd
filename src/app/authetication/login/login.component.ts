@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../models';
+import {  UserCredentials } from '../../models';
 import { AuthenticationService } from '../authentication.service';
 import { Router } from '@angular/router';
 
@@ -11,9 +11,9 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
 
-  authError: string;
+  private error:boolean=false;
 
-  user: User = {
+  user: UserCredentials = {
     username: "",
     password: "",
     role:0
@@ -27,16 +27,24 @@ export class LoginComponent implements OnInit {
   }
 
 // function used to log the user in when user clicks the button
-  login() {
-    this.authService.login(this.user).subscribe(
-      data => { 
-        localStorage.setItem("token",data.token);
-        this.authService.authenticateUser();
-      },
-      err => {
-        this.authError = err.error.errors[0];
+  login(form:any) {
+      if(!form.invalid){
+
+        this.authService.login(this.user).subscribe(
+          data => { 
+            localStorage.setItem("token",data.token);
+            this.authService.authenticateUser();
+          },
+          err => {
+            this.error=true;;
+          }
+        );
       }
-    );
+      else{
+        this.error=false;
+      }
+    
+    
   }
 
 

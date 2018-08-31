@@ -1,39 +1,48 @@
-<div class="container">
-  <div class="row">
-    <div class="col-4 col-sm-4 col-md-4 col-lg-4">
-    </div>
-    <div class="col-4 col-sm-4 col-md-4 col-lg-4 login-card">
 
-      <mat-card class="col-12 col-sm-12 col-md-12 col-lg-12 custom-mat-card">
-        <mat-card-header>
-          <h4>Login</h4>
-        </mat-card-header>
-        <mat-card-content class="col-12 col-sm-12 col-md-12 col-lg-12  login-component">
-          <form #f="ngForm" class="col-12 col-sm-12 col-md-12 col-lg-12 login-component " (ngSubmit)="login()">
-            <mat-form-field class="col-12 col-sm-12 col-md-12 col-lg-12  login-component">
-              <input matInput type="text" placeholder="Enter User Name" name="username" [(ngModel)]="user.username" class="col-12 col-sm-12 col-md-12 col-lg-12 login-component" required >
-              <mat-error>
-                  username is  <strong> required</strong>
-              </mat-error>
-            </mat-form-field>
-            <mat-form-field class="example-full-width" class="col-12 col-sm-12 col-md-12 col-lg-12  login-component">
-              <input matInput type="password" placeholder="Enter Your Password" name="password" name="password" [(ngModel)]="user.password" class="col-12 col-sm-12 col-md-12 col-lg-12  login-component"
-                required>
-              <mat-error>
-                  password is  <strong> required</strong>
-              </mat-error>
-            </mat-form-field>
-            <div>
-                <mat-error *ngIf="authError">
-                    <strong> {{authError}}</strong>
-                </mat-error>
-              <button type="submit" mat-raised-button color="primary">Login</button>
-            </div>
-          </form>
-        </mat-card-content>
-      </mat-card>
-      <div class="col-4 col-sm-4 col-md-4 col-lg-4">
-      </div>
-    </div>
-  </div>
+
+<div class="parent-container" fxLayout="row" fxLayoutAlign="center center">
+
+  <mat-card fxLayout="column" fxFlex.xs="90" fxFlex.sm="50" fxFlex.md="30" fxFlex.lg="30" fxFlex.xl="30" class="login-card">
+
+    <mat-card-header fxLayout="row" fxLayoutAlign="center" class="login-card-header">
+      <h4>login</h4>
+    </mat-card-header>
+
+    <mat-card-content fxLayout="row wrap">
+      <form #frm="ngForm" fxLayout="row wrap" fxFlex="100" (ngSubmit)="login(frm)">
+        <mat-form-field fxLayout="row" fxFlex="100" class="input-form-filed">
+          <input matInput fxFlex="100" type="text" placeholder="Enter User Name" name="username" [(ngModel)]="user.username" #usname="ngModel"
+            required>
+          <mat-error *ngIf="usname.errors?.required" fxFlex="100">
+            username is <strong> required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field fxLayout="row" fxFlex="100" class="input-form-filed">
+          <input matInput fxFlex="100" type="password" placeholder="password" name="password" [(ngModel)]="user.password" #pssword="ngModel"
+            required>
+          <mat-error *ngIf="pssword.errors?.required" fxFlex="100">
+            Password is <strong> required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <div fxLayout="row" fxFlex="100" class="error-pallet" fxLayoutAlign="center">
+          
+          <mat-error *ngIf="error" fxFlex="100">
+            <strong> user name or password is wrong</strong>
+          </mat-error>
+
+        </div>
+
+
+        <div fxFlex="100" fxLayout="column" fxLayoutAlign="none center">
+          <button type="submit" mat-raised-button color="primary">Login</button>
+        </div>
+      </form>
+
+    </mat-card-content>
+
+  </mat-card>
+
+
 </div>
