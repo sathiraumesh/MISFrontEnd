@@ -20,7 +20,7 @@ export class AddUserComponent implements OnInit {
     role: 0,
     gender: "",
     dateOfBirth: "",
-    telephoneNum: 0,
+    telePhoneNumber: 0,
     nic:""
 
   };

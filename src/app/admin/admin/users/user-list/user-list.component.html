@@ -1,3 +1,16 @@
-<p>
-  user-list works!
-</p>
+
+<div  class="parent-container" fxLayout="row" fxLayoutAlign="center">
+
+  <div fxFlex.lt-sm="85" fxFlex="50" fxLayout="column">
+
+    <app-user *ngFor="let user of userList" [user]="user" > </app-user>
+
+  </div>
+
+  
+
+</div>
+<mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>
