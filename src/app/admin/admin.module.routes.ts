@@ -1,11 +1,12 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AdminComponent } from "./admin/admin.component";
-import { HomeComponent } from "./home/home.component";
 import { ProfileComponent } from "../core/profile/profile.component";
-import { AddUserComponent } from "./users/add-user/add-user.component";
-import { UsersComponent } from "./users/users.component";
-import { UserComponent } from "./users/user/user.component";
+import { AddUserComponent } from "./admin/users/add-user/add-user.component";
+import { UsersComponent } from "./admin/users/users.component";
+import { UserComponent } from "./admin/users/user/user.component";
+import { UserListComponent } from "./admin/users/user-list/user-list.component";
+import { HomeComponent } from "./admin/home/home.component";
 
 
 const routes: Routes = [
@@ -17,7 +18,7 @@ const routes: Routes = [
             { path: "profile", component: ProfileComponent },
             { path: "users", component:UsersComponent,children:[
                 {path:"",pathMatch:"full",redirectTo:"home"},
-                {path:"home",component:UserComponent},
+                {path:"home",component:UserListComponent},
                 {path:"adduser",component:AddUserComponent}
             ] }
         ]
