@@ -5,9 +5,12 @@ import { HomeComponent } from './home/home.component';
 import { AdminModuleRoutes } from './admin.module.routes';
 import { MaterialModules } from '../material';
 import { CoreModule } from '../core/core.module';
-import { ManageUsersComponent } from './manage-users/manage-users.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
+import { UsersComponent } from './users/users.component';
+import { AddUserComponent } from './users/add-user/add-user.component';
+import { UserComponent } from './users/user/user.component';
 
 
 
@@ -18,8 +21,16 @@ import { FormsModule } from '@angular/forms';
     MaterialModules,
     CoreModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    
   ],
-  declarations: [AdminComponent, HomeComponent, ManageUsersComponent]
+  declarations: [
+    AdminComponent, 
+    HomeComponent,  
+    NavbarComponent, 
+    UsersComponent, 
+    AddUserComponent,
+    UserComponent
+  ]
 })
 export class AdminModule { }

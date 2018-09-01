@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../core/user.service';
-import { User } from '../../models';
+import { UserService } from '../../../core/user.service';
+import { User } from '../../../models';
 
 @Component({
-  selector: 'app-manage-users',
-  templateUrl: './manage-users.component.html',
-  styleUrls: ['./manage-users.component.css']
+  selector: 'app-add-user',
+  templateUrl: './add-user.component.html',
+  styleUrls: ['./add-user.component.css']
 })
-export class ManageUsersComponent implements OnInit {
+export class AddUserComponent implements OnInit {
 
   constructor(private userService: UserService) { }
 
@@ -17,10 +17,11 @@ export class ManageUsersComponent implements OnInit {
     firstName: "",
     lastName: "",
     email: "",
-    role: "",
+    role: 0,
     gender: "",
     dateOfBirth: "",
-    telephoneNum: 0
+    telephoneNum: 0,
+    nic:""
 
   };
 
@@ -47,4 +48,5 @@ export class ManageUsersComponent implements OnInit {
       console.log(err);
     });
   }
+
 }

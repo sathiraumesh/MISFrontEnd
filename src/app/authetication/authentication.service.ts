@@ -21,6 +21,7 @@ export class AuthenticationService {
 
   //function for authenticating user and routing them to the correct direction
   authenticateUser() {
+    console.log(this.getUserpermissions());
     if (this.getUserpermissions() === 1) {
       console.log(this.getUserpermissions());
       console.log(this.getUserId());
