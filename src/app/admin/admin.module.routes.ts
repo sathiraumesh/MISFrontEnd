@@ -19,7 +19,8 @@ const routes: Routes = [
             { path: "users", component:UsersComponent,children:[
                 {path:"",pathMatch:"full",redirectTo:"home"},
                 {path:"home",component:UserListComponent},
-                {path:"adduser",component:AddUserComponent}
+                {path:"adduser",component:AddUserComponent},
+                {path:"userinfo/:id",component:UserComponent}
             ] }
         ]
     }

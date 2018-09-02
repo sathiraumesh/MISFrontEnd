@@ -10,6 +10,10 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { AgGridModule } from 'ag-grid-angular';
+import {MatTableModule} from '@angular/material/table';
+
+
 
 @NgModule({
   imports: [
@@ -24,7 +28,11 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatDatepickerModule,
     MatNativeDateModule,
     MatMenuModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    AgGridModule.withComponents([]),
+    MatTableModule
+    
+   
     
 
     
@@ -40,7 +48,10 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatSelectModule,
     MatDatepickerModule,
     MatMenuModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    AgGridModule,
+    MatTableModule
+    
     
 
     

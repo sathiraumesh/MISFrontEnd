@@ -1,16 +1,42 @@
+<div fxLayout="row" fxLayoutAlign="center">
+<ag-grid-angular
+fxFlex="80"
+style="height: 50vh;" 
+class="ag-theme-balham"
+[rowData]="rowData" 
+[columnDefs]="columnDefs"
+[enableSorting]="true"
+[enableFilter]="true"
+rowSelection="multiple"
+[animateRows]="true"
+(selectionChanged)="onRowSelectedChange($event)"
+(gridReady)="onGridReady($event)"
 
-<div  class="parent-container" fxLayout="row" fxLayoutAlign="center">
 
-  <div fxFlex.lt-sm="85" fxFlex="50" fxLayout="column">
+>
 
-    <app-user *ngFor="let user of userList" [user]="user" > </app-user>
+</ag-grid-angular>
 
-  </div>
-
-  
-
+<div>
+  {{selectedName|json}}
+  {{userId}}
 </div>
-<mat-paginator [length]="100"
-              [pageSize]="10"
-              [pageSizeOptions]="[5, 10, 25, 100]">
-</mat-paginator>
+</div>
+
+<button mat-raised-button [matMenuTriggerFor]="menu">
+Role
+</button>
+<mat-menu #menu="matMenu">
+<button mat-menu-item (click)="selectRole()">
+  <span>Doctors</span>
+</button>
+<button mat-menu-item >
+  <span></span>
+</button>
+<button mat-menu-item>
+  <span>Disable alerts</span>
+</button>
+</mat-menu>
+
+
+<button (click)="goToPath()">go to route</button>

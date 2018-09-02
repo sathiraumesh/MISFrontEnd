@@ -1,8 +1,9 @@
 import { NgModule } from "../../../node_modules/@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { DrugInventoryComponent } from "./drug-inventory/drug-inventory.component";
-import { HomeComponent } from "./home/home.component";
+
 import { ListComponent } from "./list/list.component";
+import { HomeComponent } from "src/app/drug-inventory/home/home.component";
 
 const routes:Routes=[
     {path:"",component:DrugInventoryComponent,
