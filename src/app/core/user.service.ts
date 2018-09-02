@@ -18,6 +18,10 @@ export class UserService {
     }
   }
 
+  getUser(userId){
+    return this.http.get<any>("api/users/"+userId)
+  }
+
   getUsers(){
     return this.http.get<any>("api/users");
   }

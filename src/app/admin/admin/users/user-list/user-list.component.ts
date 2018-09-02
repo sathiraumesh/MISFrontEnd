@@ -30,7 +30,7 @@ export class UserListComponent implements OnInit {
   }
   
   goToPath(){
-   let  path="/admin/users/userinfo/"+this.userId;
+   let  path="/admin/users/"+this.userId;
     this.router.navigate([path]);
   }
 
