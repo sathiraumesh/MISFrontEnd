@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UsersComponent } from './admin/users/users.component';
 import { AddUserComponent } from './admin/users/add-user/add-user.component';
-import { UserComponent } from './admin/users/user/user.component';
+import { UserComponent } from './admin/users/user-profile/user-profile.component';
 import { UserListComponent } from './admin/users/user-list/user-list.component';
 import { HomeComponent } from './admin/home/home.component';
 

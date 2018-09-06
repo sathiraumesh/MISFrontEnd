@@ -11,7 +11,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { AgGridModule } from 'ag-grid-angular';
-import {MatTableModule} from '@angular/material/table';
+import {MatListModule} from '@angular/material/list';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 
@@ -30,7 +31,9 @@ import {MatTableModule} from '@angular/material/table';
     MatMenuModule,
     MatPaginatorModule,
     AgGridModule.withComponents([]),
-    MatTableModule
+    MatListModule,
+    MatDividerModule
+   
     
    
     
@@ -50,7 +53,8 @@ import {MatTableModule} from '@angular/material/table';
     MatMenuModule,
     MatPaginatorModule,
     AgGridModule,
-    MatTableModule
+    MatListModule,
+    MatDividerModule
     
     
 

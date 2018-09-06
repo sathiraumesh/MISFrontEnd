@@ -35,25 +35,7 @@ export class HomeComponent implements OnInit {
   }
 
 
-  onGridReady(params) {
-    this.gridApi = params.api;
-    this.gridColumnApi = params.columnApi;
-    this.userService.getUsers().subscribe(data => {
-
-      this.rowData = data.users;
-    })
-  }
-
-
-  selectRole() {
-    var roleFilterComponent = this.gridApi.getFilterInstance("role");
-    roleFilterComponent.setModel({
-      type: "equals",
-      filter: 1
-    });
-
-    this.gridApi.onFilterChanged();
-  }
+  
 
 
 }

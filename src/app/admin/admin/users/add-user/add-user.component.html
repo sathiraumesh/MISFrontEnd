@@ -1,75 +1,108 @@
 <div class="parent-container" fxLayout="row" fxLayoutAlign="center center">
 
-    <div fxLayout="row"  fxFlex.lt-xs="80" fxFlex.gt-xs="50" fxLayoutAlign="strech">
-      <mat-card fxFlex="100" fxLayout="column" fxLayoutAlign="none strech">
-        <mat-card-header>
-          Add user
-        </mat-card-header>
-  
-        <mat-card-content fxLayout="column" fxLayoutAlign="none strech">
-          <form #frm="ngForm" fxLayout="column" (ngSubmit)=addUser(frm)>
-  
-              <mat-form-field class="example-full-width">
-                  <input matInput #usName="ngModel" name="usernName" [(ngModel)]="user.username" placeholder="user Name">
-                </mat-form-field>
-  
-                <mat-form-field class="example-full-width">
+  <div fxLayout="row" fxFlex.lt-xs="80" fxFlex.gt-xs="50" fxLayoutAlign="strech">
+    <mat-card fxFlex="100" fxLayout="column" fxLayoutAlign="none strech">
+      <mat-card-header>
+        Add user
+      </mat-card-header>
+
+      <mat-card-content fxLayout="column" fxLayoutAlign="none strech">
+
+        <form #frm="ngForm" fxLayout="column" (ngSubmit)=addUser(frm)>
+
+          <mat-form-field class="example-full-width">
+            <input matInput #usName="ngModel" name="usernName" [(ngModel)]="user.username" placeholder="user Name" required>
+            <mat-error *ngIf="usName.errors?.required">
+              <strong>user name required</strong>
+            </mat-error>
+          </mat-form-field>
+
+
+          <!-- <mat-form-field class="example-full-width">
                     <input matInput #pass="ngModel" name="password" [(ngModel)]="user.password" placeholder="password">
-                  </mat-form-field>
-  
-            <mat-form-field class="example-full-width">
-              <input matInput #fName="ngModel" name="firstName" [(ngModel)]="user.firstName" placeholder="First Name">
-            </mat-form-field>
-  
-            <mat-form-field class="example-full-width">
-              <input matInput #lName="ngModel" placeholder="Last Name" name="lastName" [(ngModel)]="user.lastName">
-            </mat-form-field>
-  
-            <mat-form-field class="example-full-width">
-              <input matInput #emaiil="ngModel" placeholder="email" name="email" [(ngModel)]="user.email">
-            </mat-form-field>
-  
-            <mat-form-field>
-              <mat-select  #role="ngModel" [(value)]="role.selected" [(ngModel)]="user.role" placeholder="Role" name="role">
-                <mat-option value="1">Doctor </mat-option>
-                <mat-option value="2">Nurse </mat-option>
-                <mat-option value="3">Inventory controler </mat-option>
+                  </mat-form-field> -->
+
+          <mat-form-field class="example-full-width">
+            <input matInput #fName="ngModel" name="firstName" [(ngModel)]="user.firstName" placeholder="First Name" required>
+            <mat-error *ngIf="fName.errors?.required">
+              <strong>first name required</strong>
+            </mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field class="example-full-width">
+            <input matInput #lName="ngModel" placeholder="Last Name" name="lastName" [(ngModel)]="user.lastName" required>
+            <mat-error *ngIf="lName.errors?.required">
+              <strong>last name required</strong>
+            </mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field class="example-full-width">
+            <input matInput #email="ngModel" placeholder="email" name="email" [(ngModel)]="user.email" required>
+            <mat-error *ngIf="email.errors?.required">
+              <strong>email name required</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-select #gender="ngModel" [(value)]="gender.selected" [(ngModel)]="user.gender" placeholder="Gender" name="gender" required>
+              <mat-option value="Male">Male </mat-option>
+              <mat-option value="Female">Female </mat-option>
+            </mat-select>
+            <mat-error *ngIf="gender.errors?.required">
+              <strong> gender is required</strong>
+            </mat-error>
+          </mat-form-field>
+
+
+
+          <mat-form-field>
+              <mat-select #role="ngModel" [(ngModel)]="user.role" name="role"  placeholder="Role" required>
+                <mat-option value=1>Doctor </mat-option>
+                <mat-option value=2>nurse </mat-option>
               </mat-select>
+              <mat-error *ngIf="role.errors?.required">
+                <strong> role is required</strong>
+              </mat-error>
             </mat-form-field>
-  
-            <mat-form-field>
-              <mat-select #gender="ngModel" [(value)]="gender.selected" [(ngModel)]="user.gender" placeholder="Gender" name="gender">
-                <mat-option value="Male">Male </mat-option>
-                <mat-option value="Female">Female </mat-option>
-              </mat-select>
-            </mat-form-field>
-  
-            <mat-form-field>
-              <input matInput #dob="ngModel" [matDatepicker]="picker" placeholder="Date of birth" name="dateOfBirth" [(ngModel)]=user.dateOfBirth >
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
-  
-            <mat-form-field>
-            <input #tele="ngModel" type="tel" matInput placeholder="Telephone" name="telePhoneNumber" [(ngModel)]="user.telePhoneNumber">
-            <mat-icon matSuffix>mode_edit</mat-icon>
-            </mat-form-field>
-  
-            <mat-form-field>
-              <input #nic="ngModel" type=text matInput placeholder="NIC Bumber" name="nic" [(ngModel)]="user.nic">
-              <mat-icon matSuffix>mode_edit</mat-icon>
-              </mat-form-field>
-  
-            <div fxLayout="row">
-              <button mat-raised-button color="primary" fxFlex="40">Add User</button>
-            </div>
-  
-  
-          </form>
-        </mat-card-content>
-      </mat-card>
-  
-    </div>
-  
-  
-    <!-- {{frm.value|json}} -->
+
+          <mat-form-field>
+            <input matInput #dob="ngModel" [matDatepicker]="picker" placeholder="Date of birth" name="dateOfBirth" [(ngModel)]=user.dateOfBirth required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="dob.errors?.required">
+                <strong> date of birth is required</strong>
+              </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input #tele="ngModel" type="tel" matInput placeholder="Telephone" name="telePhoneNumber" [(ngModel)]="user.telePhoneNumber" required>
+            <!-- <mat-icon matSuffix>mode_edit</mat-icon> -->
+            <mat-error *ngIf="tele.errors?.required">
+                <strong> telephone number required</strong>
+              </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input #nic="ngModel" type=text matInput placeholder="NIC Number" name="nic" [(ngModel)]="user.nic" required >
+            <!-- <mat-icon matSuffix>mode_edit</mat-icon> -->
+            <mat-error *ngIf="nic.errors?.required">
+                <strong> NIC number required</strong>
+              </mat-error>
+            
+          </mat-form-field>
+
+          <div fxLayout="row" class="add-button">
+            <button mat-raised-button color="primary" fxFlex="40">Add User</button>
+          </div>
+
+
+        </form>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+
+
+  <!-- {{frm.value|json}} -->

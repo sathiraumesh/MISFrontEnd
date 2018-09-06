@@ -1,0 +1,50 @@
+
+
+<div class="parent-container" fxLayout="row" fxLayoutAlign="center" >
+   <mat-card fxFlex="50">
+       <mat-card-header>
+           Profile
+       </mat-card-header>
+
+       <mat-card-content>
+            <mat-list>
+                <mat-list-item>
+                    photo
+                </mat-list-item>
+                <mat-list-item>
+                    First name {{user.firstName}}
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    Last name {{user.lastName}}
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    Date of birth {{user.dateOfBirth}}
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    Role {{user.role}}
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                   Gender {{user.gender}}
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    email {{user.email}}
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    NIC {{user.nic}}
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    contact No{{user.telePhoneNumber}}
+                </mat-list-item>
+                <mat-divider></mat-divider>
+            </mat-list>
+       </mat-card-content>
+   </mat-card>
+</div>
+<!-- {{user|json}} -->

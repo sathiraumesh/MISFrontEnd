@@ -5,8 +5,8 @@ import { UserService } from '../../../../core/user.service';
 
 @Component({
   selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  templateUrl: './user-profile.component.html',
+  styleUrls: ['./user-profile.component.css']
 })
 export class UserComponent implements OnInit {
  user:any;

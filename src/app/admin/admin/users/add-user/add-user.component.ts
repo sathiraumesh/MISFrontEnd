@@ -17,10 +17,10 @@ export class AddUserComponent implements OnInit {
     firstName: "",
     lastName: "",
     email: "",
-    role: 0,
+    role:null,
     gender: "",
     dateOfBirth: "",
-    telePhoneNumber: 0,
+    telePhoneNumber:null,
     nic:""
 
   };
@@ -41,12 +41,15 @@ export class AddUserComponent implements OnInit {
   //   // }// end of getUsers();
 
   addUser(form: any) {
-    this.userService.addUser(this.user).subscribe(data=>{
-      console.log(data);
-
-    },err=>{
-      console.log(err);
-    });
+    if(!form.invalid){
+      this.userService.addUser(this.user).subscribe(data=>{
+        console.log(data);
+  
+      },err=>{
+        console.log(err);
+      });
+    }
+    
   }
 
 }
