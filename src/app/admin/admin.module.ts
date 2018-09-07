@@ -13,6 +13,7 @@ import { AddUserComponent } from './admin/users/add-user/add-user.component';
 import { UserComponent } from './admin/users/user-profile/user-profile.component';
 import { UserListComponent } from './admin/users/user-list/user-list.component';
 import { HomeComponent } from './admin/home/home.component';
+import { PopupDialogComponent } from './popup-dialog/popup-dialog.component';
 
 
 
@@ -33,7 +34,9 @@ import { HomeComponent } from './admin/home/home.component';
     UsersComponent, 
     AddUserComponent,
     UserComponent,
-    UserListComponent
-  ]
+    UserListComponent,
+    PopupDialogComponent
+  ],
+  entryComponents: [PopupDialogComponent],
 })
 export class AdminModule { }

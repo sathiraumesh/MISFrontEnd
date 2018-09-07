@@ -1,42 +1,40 @@
+<div fxLayout=row>
+  <div *ngIf="rowSelected">
+    <button mat-raised-button (click)="goToPath()">View Details</button>
+  </div>
+
+  <div FxLayout=row>
+    <div>
+
+    </div>
+    <button mat-raised-button [matMenuTriggerFor]="menu">
+      {{selectedRole}}
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="selectDoctors()">
+        <span>Doctors</span>
+      </button>
+      <button mat-menu-item (click)="selectNurses()">
+        <span>Nurse</span>
+      </button>
+      <button mat-menu-item (click)="selectAll()">
+        <span>All</span>
+      </button>
+    </mat-menu>
+
+
+  </div>
+</div>
+
 <div fxLayout="row" fxLayoutAlign="center">
-<ag-grid-angular
-fxFlex="80"
-style="height: 50vh;" 
-class="ag-theme-balham"
-[rowData]="rowData" 
-[columnDefs]="columnDefs"
-[enableSorting]="true"
-[enableFilter]="true"
-rowSelection="multiple"
-[animateRows]="true"
-(selectionChanged)="onRowSelectedChange($event)"
-(gridReady)="onGridReady($event)"
+  <ag-grid-angular fxFlex="80" style="height: 50vh;" class="ag-theme-balham" [rowData]="rowData" [columnDefs]="columnDefs"
+    [enableSorting]="true" [enableFilter]="true" rowSelection="single" [animateRows]="true" (selectionChanged)="onRowSelectedChange($event)"
+    (gridReady)="onGridReady($event)">
 
+  </ag-grid-angular>
 
->
-
-</ag-grid-angular>
-
-<div>
-  <!-- {{selectedName|json}} -->
-  <!-- {{userId}} -->
+  <div>
+    <!-- {{selectedName|json}} -->
+    <!-- {{userId}} -->
+  </div>
 </div>
-</div>
-
-<button mat-raised-button [matMenuTriggerFor]="menu">
-Role
-</button>
-<mat-menu #menu="matMenu">
-<button mat-menu-item (click)="selectRole()">
-  <span>Doctors</span>
-</button>
-<button mat-menu-item >
-  <span></span>
-</button>
-<button mat-menu-item>
-  <span>Disable alerts</span>
-</button>
-</mat-menu>
-
-
-<button (click)="goToPath()">go to route</button>

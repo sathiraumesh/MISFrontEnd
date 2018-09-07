@@ -59,8 +59,9 @@
 
           <mat-form-field>
               <mat-select #role="ngModel" [(ngModel)]="user.role" name="role"  placeholder="Role" required>
-                <mat-option value=1>Doctor </mat-option>
-                <mat-option value=2>nurse </mat-option>
+                <mat-option value="Admin">Admin</mat-option>
+                <mat-option value=Doctor>Doctor </mat-option>
+                <mat-option value=Nurse>nurse </mat-option>
               </mat-select>
               <mat-error *ngIf="role.errors?.required">
                 <strong> role is required</strong>

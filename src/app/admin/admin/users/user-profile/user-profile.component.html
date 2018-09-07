@@ -1,12 +1,10 @@
+<div class="parent-container" fxLayout="row" fxLayoutAlign="center">
+    <mat-card fxFlex.lt-sm="80" fxFlex.gt-sm="50">
+        <mat-card-header>
+            Profile
+        </mat-card-header>
 
-
-<div class="parent-container" fxLayout="row" fxLayoutAlign="center" >
-   <mat-card fxFlex="50">
-       <mat-card-header>
-           Profile
-       </mat-card-header>
-
-       <mat-card-content>
+        <mat-card-content>
             <mat-list>
                 <mat-list-item>
                     photo
@@ -20,7 +18,7 @@
                 </mat-list-item>
                 <mat-divider></mat-divider>
                 <mat-list-item>
-                    Date of birth {{user.dateOfBirth}}
+                    Date of birth {{user.dateOfBirth|date}}
                 </mat-list-item>
                 <mat-divider></mat-divider>
                 <mat-list-item>
@@ -28,7 +26,7 @@
                 </mat-list-item>
                 <mat-divider></mat-divider>
                 <mat-list-item>
-                   Gender {{user.gender}}
+                    Gender {{user.gender}}
                 </mat-list-item>
                 <mat-divider></mat-divider>
                 <mat-list-item>
@@ -43,8 +41,35 @@
                     contact No{{user.telePhoneNumber}}
                 </mat-list-item>
                 <mat-divider></mat-divider>
+                <mat-list-item>
+
+                    <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="20px" fxFlex="100">
+                        <div>
+                            <button mat-raised-button color="warn" (click)=openDialog()>Delete</button>
+                        </div>
+
+                        <div>
+                            <button mat-raised-button color="basic" (confirm)=logg()>Edit</button>
+                        </div>
+                    </div>
+                    <!-- <ol>
+                        <li>
+                            <mat-form-field>
+                                <input matInput [(ngModel)]="name" placeholder="What's your name?">
+                            </mat-form-field>
+                        </li>
+                        <li>
+                            <button mat-raised-button (click)="openDialog()">Pick one</button>
+                        </li>
+                        <li *ngIf="animal">
+                            You chose: <i>{{animal}}</i>
+                        </li>
+                    </ol> -->
+
+                </mat-list-item>
             </mat-list>
-       </mat-card-content>
-   </mat-card>
+        </mat-card-content>
+    </mat-card>
 </div>
-<!-- {{user|json}} -->
+<!-- {{user|json}}
+{{user.firstName}} -->
