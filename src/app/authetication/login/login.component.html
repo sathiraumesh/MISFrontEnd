@@ -4,13 +4,13 @@
   <mat-card fxLayout="column" fxFlex.xs="90" fxFlex.sm="50" fxFlex.md="30" fxFlex.lg="30" fxFlex.xl="30" class="login-card">
 
     <mat-card-header fxLayout="row" fxLayoutAlign="center" class="login-card-header">
-      <h4>login</h4>
+      <h4>Sign in</h4>
     </mat-card-header>
 
     <mat-card-content fxLayout="row wrap">
       <form #frm="ngForm" fxLayout="row wrap" fxFlex="100" (ngSubmit)="login(frm)">
         <mat-form-field fxLayout="row" fxFlex="100" class="input-form-filed">
-          <input matInput fxFlex="100" type="text" placeholder="Enter User Name" name="username" [(ngModel)]="user.username" #usname="ngModel"
+          <input matInput fxFlex="100" type="text" placeholder="User Name" name="username" [(ngModel)]="user.username" #usname="ngModel"
             required>
           <mat-error *ngIf="usname.errors?.required" fxFlex="100">
             username is <strong> required</strong>
@@ -18,7 +18,7 @@
         </mat-form-field>
 
         <mat-form-field fxLayout="row" fxFlex="100" class="input-form-filed">
-          <input matInput fxFlex="100" type="password" placeholder="password" name="password" [(ngModel)]="user.password" #pssword="ngModel"
+          <input matInput fxFlex="100" type="password" placeholder="Password" name="password" [(ngModel)]="user.password" #pssword="ngModel"
             required>
           <mat-error *ngIf="pssword.errors?.required" fxFlex="100">
             Password is <strong> required</strong>
@@ -28,7 +28,7 @@
         <div fxLayout="row" fxFlex="100" class="error-pallet" fxLayoutAlign="center">
           
           <mat-error *ngIf="error" fxFlex="100">
-            <strong> user name or password is wrong</strong>
+            <strong> username or the password is wrong</strong>
           </mat-error>
 
         </div>

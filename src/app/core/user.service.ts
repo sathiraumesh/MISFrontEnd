@@ -29,5 +29,9 @@ export class UserService {
   addUser(user){
     return this.http.post<any>("api/users",user);
   }
+
+  deleteUser(userId){
+    return this.http.delete<any>("api/users/"+userId);
+  }
   
 }

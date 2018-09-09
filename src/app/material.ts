@@ -13,6 +13,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { AgGridModule } from 'ag-grid-angular';
 import {MatListModule} from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -32,7 +33,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatPaginatorModule,
     AgGridModule.withComponents([]),
     MatListModule,
-    MatDividerModule
+    MatDividerModule,
+    MatDialogModule
    
     
    
@@ -54,7 +56,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatPaginatorModule,
     AgGridModule,
     MatListModule,
-    MatDividerModule
+    MatDividerModule,
+    MatDialogModule
     
     
 

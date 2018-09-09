@@ -14,9 +14,9 @@ export class LoginComponent implements OnInit {
   private error:boolean=false;
 
   user: UserCredentials = {
-    username: "",
-    password: "",
-    role:0
+    username:"",
+    password:"",
+    role:""
   };
 
   constructor(private authService: AuthenticationService,private router:Router) { }
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
 // function used to log the user in when user clicks the button
   login(form:any) {
       if(!form.invalid){
-
+          console.log(this.user);
         this.authService.login(this.user).subscribe(
           data => { 
             console.log(data);
@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
           },
           err => {
             this.error=true;;
+            console.log(err)
           }
         );
       }

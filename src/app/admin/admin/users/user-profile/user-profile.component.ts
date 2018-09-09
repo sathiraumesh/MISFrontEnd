@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../../../../models';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../../../../core/user.service';
 import { MatDialog } from '@angular/material';
 import { PopupDialogComponent } from '../../../popup-dialog/popup-dialog.component';
@@ -13,7 +13,7 @@ import { PopupDialogComponent } from '../../../popup-dialog/popup-dialog.compone
 export class UserComponent implements OnInit {
  user:any={
  };
-  constructor(private activeRoute:ActivatedRoute,private userService:UserService,private dialog: MatDialog) { }
+  constructor(private activeRoute:ActivatedRoute,private userService:UserService,private dialog: MatDialog,private router:Router) { }
 
   ngOnInit() {
     this.getRouteParams();
@@ -37,7 +37,7 @@ export class UserComponent implements OnInit {
   openDialog():void{
     const dialogRef=this.dialog.open(PopupDialogComponent,{
       width:"20%",
-      data:"hellow"
+      data:"Are you sure"
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -48,6 +48,9 @@ export class UserComponent implements OnInit {
           err=>{
             console.log(err);
           });
+
+          this.router.navigate(["/admin/users"]);
+
       }else{
 
       }
