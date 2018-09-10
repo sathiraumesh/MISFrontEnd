@@ -9,12 +9,15 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MaterialModules } from './material';
 import { HttpClientModule } from '../../node_modules/@angular/common/http';
 import { CoreModule } from './core/core.module';
+import { StudentModule } from './student/student.module';
+
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,8 @@ import { CoreModule } from './core/core.module';
     MaterialModules,
     BrowserAnimationsModule,
     HttpClientModule,
-    CoreModule
+    CoreModule,
+    StudentModule
    
    
   ],

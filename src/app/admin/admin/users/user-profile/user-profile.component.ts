@@ -18,7 +18,7 @@ export class UserComponent implements OnInit {
 
   ngOnInit() {
     this.getRouteParams();
-  }
+  } 
 
 
 
