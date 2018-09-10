@@ -69,6 +69,7 @@ export class UserListComponent implements OnInit {
 
 
   selectDoctors() {
+    var selctedRows=this.gridApi.deselectAll();
     var roleFilterComponent = this.gridApi.getFilterInstance("role");
     roleFilterComponent.setModel({
       type: "equals",
@@ -80,6 +81,7 @@ export class UserListComponent implements OnInit {
   }
 
   selectAll() {
+    var selctedRows=this.gridApi.deselectAll();
     var roleFilterComponent = this.gridApi.getFilterInstance("role");
     roleFilterComponent.setModel(null);
     this.gridApi.onFilterChanged();
@@ -88,6 +90,7 @@ export class UserListComponent implements OnInit {
 
 
   selectNurses() {
+    var selctedRows=this.gridApi.deselectAll();
     var roleFilterComponent = this.gridApi.getFilterInstance("role");
     roleFilterComponent.setModel({
       type: "equals",

@@ -1,30 +1,23 @@
 <div class="parent-container" fxLayout="row" fxLayoutAlign="center center">
 
-  <div fxLayout="row" fxFlex.lt-xs="80" fxFlex.gt-xs="50" fxLayoutAlign="strech">
-    <mat-card fxFlex="100" fxLayout="column" fxLayoutAlign="none strech">
-      <mat-card-header>
-        Add user
-      </mat-card-header>
 
-      <mat-card-content fxLayout="column" fxLayoutAlign="none strech">
+  <div fxLayout="row" fxFlex.lt-xs="80" fxFlex.gt-xs="100" fxLayoutAlign="strech">
+    <div fxFlex="100" fxLayout="column" fxLayoutAlign="none strech">
+      <div>
+        Edit user
+      </div>
 
-        <form #frm="ngForm" fxLayout="column" (ngSubmit)=addUser(frm)>
+      <div fxLayout="column" fxLayoutAlign="none strech">
+
+        <form #frm="ngForm" fxLayout="column" >
+
+
+
+
+
 
           <mat-form-field class="example-full-width">
-            <input matInput #usName="ngModel" name="usernName" [(ngModel)]="user.username" placeholder="user Name"
-              required>
-            <mat-error *ngIf="usName.errors?.required">
-              <strong>user name required</strong>
-            </mat-error>
-          </mat-form-field>
-
-
-          <!-- <mat-form-field class="example-full-width">
-                    <input matInput #pass="ngModel" name="password" [(ngModel)]="user.password" placeholder="password">
-                  </mat-form-field> -->
-
-          <mat-form-field class="example-full-width">
-            <input matInput #fName="ngModel" name="firstName" [(ngModel)]="user.firstName" placeholder="First Name"
+            <input matInput #fName="ngModel" name="firstName" [(ngModel)]="data.firstName" placeholder="First Name"
               required>
             <mat-error *ngIf="fName.errors?.required">
               <strong>first name required</strong>
@@ -33,7 +26,7 @@
 
 
           <mat-form-field class="example-full-width">
-            <input matInput #lName="ngModel" placeholder="Last Name" name="lastName" [(ngModel)]="user.lastName"
+            <input matInput #lName="ngModel" placeholder="Last Name" name="lastName" [(ngModel)]="data.lastName"
               required>
             <mat-error *ngIf="lName.errors?.required">
               <strong>last name required</strong>
@@ -42,7 +35,7 @@
 
 
           <mat-form-field class="example-full-width">
-            <input matInput #email="ngModel" placeholder="email" name="email" [(ngModel)]="user.email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+            <input matInput #email="ngModel" placeholder="email" name="email" [(ngModel)]="data.email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
             <mat-error *ngIf="email.errors?.required">
               <strong>email name required</strong>
             </mat-error>
@@ -52,7 +45,7 @@
           </mat-form-field>
 
           <mat-form-field>
-            <mat-select #gender="ngModel" [(value)]="gender.selected" [(ngModel)]="user.gender" placeholder="Gender"
+            <mat-select #gender="ngModel" [(value)]="gender.selected" [(ngModel)]="data.gender" placeholder="Gender"
               name="gender" required>
               <mat-option value="Male">Male </mat-option>
               <mat-option value="Female">Female </mat-option>
@@ -65,7 +58,7 @@
 
 
           <mat-form-field>
-            <mat-select #role="ngModel" [(ngModel)]="user.role" name="role" placeholder="Role" required>
+            <mat-select #role="ngModel" [(ngModel)]="data.role" name="role" placeholder="Role" required>
               <mat-option value="Admin">Admin</mat-option>
               <mat-option value=Doctor>Doctor </mat-option>
               <mat-option value=Nurse>nurse </mat-option>
@@ -77,7 +70,7 @@
 
           <mat-form-field>
             <input matInput #dob="ngModel" [matDatepicker]="picker" placeholder="Date of birth" name="dateOfBirth"
-              [(ngModel)]=user.dateOfBirth required>
+              [(ngModel)]=data.dateOfBirth required>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
             <mat-error *ngIf="dob.errors?.required">
@@ -86,24 +79,25 @@
           </mat-form-field>
 
           <mat-form-field>
-            <input #tele="ngModel" type="tel" matInput placeholder="Telephone" name="telePhoneNumber" [(ngModel)]="user.telePhoneNumber"
+            <input #tele="ngModel" type="tel" matInput placeholder="Telephone" name="telePhoneNumber" [(ngModel)]="data.telePhoneNumber"
               required minlength="10" maxlength="10" pattern="^0[0-9].*$">
-            <!-- <mat-icon matSuffix>mode_edit</mat-icon> -->
+
             <mat-error *ngIf="tele.errors?.required">
               <strong> telephone number required</strong>
             </mat-error>
 
-           
-              <mat-error *ngIf="tele.errors?.minlength||tele.errors?.pattern">
-                <strong>Not a valid telephone number</strong>
-              </mat-error>
-            
+
+            <mat-error *ngIf="tele.errors?.minlength||tele.errors?.pattern">
+              <strong>Not a valid telephone number</strong>
+            </mat-error>
+
 
           </mat-form-field>
 
           <mat-form-field>
-            <input #nic="ngModel" type=text matInput placeholder="NIC Number" name="nic" [(ngModel)]="user.nic" required pattern="^(\d{10}|\v{12})$">
-            <!-- <mat-icon matSuffix>mode_edit</mat-icon> -->
+            <input #nic="ngModel" type=text matInput placeholder="NIC Number" name="nic" [(ngModel)]="data.nic"
+              required pattern="^(\d{10}|\v{12})$">
+
             <mat-error *ngIf="nic.errors?.required">
               <strong> NIC number required</strong>
             </mat-error>
@@ -114,16 +108,16 @@
 
           </mat-form-field>
 
-          <div fxLayout="row" class="add-button">
-            <button  mat-raised-button color="primary" fxFlex="40">Add User</button>
+          <div fxLayout="row" class="add-button" fxLayoutGap="20px" >
+            
+
+            <button mat-raised-button  color="warn" (click)="editUser(frm,data)">Save</button>
+            <button mat-raised-button  (click)="closeDialog()">Cancel</button>
           </div>
 
 
         </form>
-      </mat-card-content>
-    </mat-card>
+      </div>
+    </div>
 
   </div>
-
-
-  <!-- {{frm.value|json}} -->
