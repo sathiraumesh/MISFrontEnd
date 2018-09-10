@@ -5,21 +5,23 @@ import { DrugInventoryComponent } from "./drug-inventory/drug-inventory.componen
 import { ListComponent } from "./list/list.component";
 import { HomeComponent } from "src/app/drug-inventory/home/home.component";
 
-const routes:Routes=[
-    {path:"",component:DrugInventoryComponent,
-    children:[
-      {path :"",pathMatch:"full",redirectTo:"home"},
-      {path:"home",component:HomeComponent},
-      {path:"list",component:ListComponent}
-    ]}
-    
-  ];
+const routes: Routes = [
+    {
+        path: "", component: DrugInventoryComponent,
+        children: [
+            { path: "", pathMatch: "full", redirectTo: "home" },
+            { path: "home", component: HomeComponent },
+            { path: "list", component: ListComponent }
+        ]
+    }
+
+];
 @NgModule({
     imports: [
         RouterModule.forChild(routes)
-    
+
     ],
-    exports:[RouterModule]
+    exports: [RouterModule]
 })
 
 export class DrugInventoryRouteModule {
