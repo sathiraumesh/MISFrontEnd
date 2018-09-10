@@ -8,6 +8,7 @@ import { StudentProfileComponent } from './student/student-profile/student-profi
   imports: [
     CommonModule,
     StudentRouteModule
+
   ],
   declarations: [StudentComponent, StudentProfileComponent]
 })
