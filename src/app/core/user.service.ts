@@ -33,5 +33,9 @@ export class UserService {
   deleteUser(userId){
     return this.http.delete<any>("api/users/"+userId);
   }
+
+  editUser(userId,data){
+    return this.http.put<any>("api/users/"+userId,data);
+  }
   
 }
