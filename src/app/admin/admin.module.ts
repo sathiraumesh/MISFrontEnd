@@ -19,6 +19,7 @@ import { EditUserComponent } from './admin/users/edit-user/edit-user.component';
 
 
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -27,19 +28,20 @@ import { EditUserComponent } from './admin/users/edit-user/edit-user.component';
     CoreModule,
     FlexLayoutModule,
     FormsModule,
-    
+
   ],
   declarations: [
-    AdminComponent, 
-    HomeComponent,  
-    NavbarComponent, 
-    UsersComponent, 
+    AdminComponent,
+    HomeComponent,
+    NavbarComponent,
+    UsersComponent,
     AddUserComponent,
     UserComponent,
     UserListComponent,
     PopupDialogComponent,
     StudentComponent,
     EditUserComponent
+
 
   ],
   entryComponents: [PopupDialogComponent,EditUserComponent],

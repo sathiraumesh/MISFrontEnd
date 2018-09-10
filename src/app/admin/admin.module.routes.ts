@@ -7,6 +7,7 @@ import { UsersComponent } from "./admin/users/users.component";
 import { UserComponent } from "./admin/users/user-profile/user-profile.component";
 import { UserListComponent } from "./admin/users/user-list/user-list.component";
 import { HomeComponent } from "./admin/home/home.component";
+import { StudentComponent } from "./admin/student/student.component";
 
 
 const routes: Routes = [
@@ -16,12 +17,15 @@ const routes: Routes = [
             { path: "", pathMatch: "full", redirectTo: "home" },
             { path: "home", component: HomeComponent },
             { path: "profile", component: ProfileComponent },
-            { path: "users", component:UsersComponent,children:[
-                {path:"",pathMatch:"full",redirectTo:"home"},
-                {path:"home",component:UserListComponent},
-                {path:"adduser",component:AddUserComponent},
-                {path:":id",component:UserComponent}
-            ] }
+            {
+                path: "users", component: UsersComponent, children: [
+                    { path: "", pathMatch: "full", redirectTo: "home" },
+                    { path: "home", component: UserListComponent },
+                    { path: "adduser", component: AddUserComponent },
+                    { path: ":id", component: UserComponent }
+                ]
+            },
+            { path: "students", component: StudentComponent }
         ]
     }
 ];

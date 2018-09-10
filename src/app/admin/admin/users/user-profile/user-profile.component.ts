@@ -22,7 +22,6 @@ export class UserComponent implements OnInit {
 
 
 
-
   getRouteParams() {
 
     console.log(this.activeRoute.snapshot.params.id);
