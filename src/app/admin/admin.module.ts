@@ -14,6 +14,7 @@ import { UserComponent } from './admin/users/user-profile/user-profile.component
 import { UserListComponent } from './admin/users/user-list/user-list.component';
 import { HomeComponent } from './admin/home/home.component';
 import { PopupDialogComponent } from './popup-dialog/popup-dialog.component';
+import { StudentComponent } from './student/student.component';
 
 
 
@@ -35,7 +36,8 @@ import { PopupDialogComponent } from './popup-dialog/popup-dialog.component';
     AddUserComponent,
     UserComponent,
     UserListComponent,
-    PopupDialogComponent
+    PopupDialogComponent,
+    StudentComponent
   ],
   entryComponents: [PopupDialogComponent],
 })
