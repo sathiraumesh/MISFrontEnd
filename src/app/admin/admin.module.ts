@@ -14,7 +14,13 @@ import { UserComponent } from './admin/users/user-profile/user-profile.component
 import { UserListComponent } from './admin/users/user-list/user-list.component';
 import { HomeComponent } from './admin/home/home.component';
 import { PopupDialogComponent } from './popup-dialog/popup-dialog.component';
+<<<<<<< HEAD
 import { StudentComponent } from './admin/student/student.component';
+=======
+import { EditUserComponent } from './admin/users/edit-user/edit-user.component';
+import { StudentComponent } from './admin/student/student.component';
+
+>>>>>>> a6f341a54746f27b08d757b586696a6e50a62d5f
 
 
 
@@ -37,8 +43,15 @@ import { StudentComponent } from './admin/student/student.component';
     UserComponent,
     UserListComponent,
     PopupDialogComponent,
+<<<<<<< HEAD
     StudentComponent
+=======
+    EditUserComponent,
+    StudentComponent
+
+
+>>>>>>> a6f341a54746f27b08d757b586696a6e50a62d5f
   ],
-  entryComponents: [PopupDialogComponent],
+  entryComponents: [PopupDialogComponent,EditUserComponent],
 })
 export class AdminModule { }

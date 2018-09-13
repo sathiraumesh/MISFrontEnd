@@ -15,7 +15,7 @@ export class PopupDialogComponent implements OnInit {
   }
 
   closeDialog() {
-    this.dialogRef.close('Pizza!');
+    this.dialogRef.close();
   }
 
    
