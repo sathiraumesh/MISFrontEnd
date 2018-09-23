@@ -10,15 +10,17 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import { AgGridModule } from 'ag-grid-angular';
+import {AgGridModule } from 'ag-grid-angular';
 import {MatListModule} from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatDialogModule} from '@angular/material/dialog';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
 @NgModule({
   imports: [
+    FlexLayoutModule,
     MatButtonModule, 
     MatInputModule,
     MatFormFieldModule,
@@ -43,6 +45,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     
 ],
   exports:[
+    FlexLayoutModule,
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,

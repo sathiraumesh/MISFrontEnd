@@ -5,7 +5,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminModuleRoutes } from './admin.module.routes';
 import { MaterialModules } from '../material';
 import { CoreModule } from '../core/core.module';
-import { FlexLayoutModule } from '@angular/flex-layout';
+// import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UsersComponent } from './admin/users/users.component';
@@ -14,13 +14,10 @@ import { UserComponent } from './admin/users/user-profile/user-profile.component
 import { UserListComponent } from './admin/users/user-list/user-list.component';
 import { HomeComponent } from './admin/home/home.component';
 import { PopupDialogComponent } from './popup-dialog/popup-dialog.component';
-<<<<<<< HEAD
-import { StudentComponent } from './admin/student/student.component';
-=======
 import { EditUserComponent } from './admin/users/edit-user/edit-user.component';
 import { StudentComponent } from './admin/student/student.component';
 
->>>>>>> a6f341a54746f27b08d757b586696a6e50a62d5f
+
 
 
 
@@ -30,7 +27,6 @@ import { StudentComponent } from './admin/student/student.component';
     AdminModuleRoutes,
     MaterialModules,
     CoreModule,
-    FlexLayoutModule,
     FormsModule,
 
   ],
@@ -43,14 +39,10 @@ import { StudentComponent } from './admin/student/student.component';
     UserComponent,
     UserListComponent,
     PopupDialogComponent,
-<<<<<<< HEAD
-    StudentComponent
-=======
     EditUserComponent,
     StudentComponent
 
 
->>>>>>> a6f341a54746f27b08d757b586696a6e50a62d5f
   ],
   entryComponents: [PopupDialogComponent,EditUserComponent],
 })
