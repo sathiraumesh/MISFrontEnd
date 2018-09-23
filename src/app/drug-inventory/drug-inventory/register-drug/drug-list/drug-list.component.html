@@ -1,3 +1,12 @@
-<p>
-  drug-list works!
-</p>
+<div fxLayout="row" fxLayoutAlign="center">
+  <ag-grid-angular fxFlex="80" style="height: 50vh;" class="ag-theme-balham" [rowData]="rowData" [columnDefs]="columnDefs"
+    [enableSorting]="true" [enableFilter]="true" rowSelection="single" [animateRows]="true" (selectionChanged)="onRowSelectedChange($event)"
+    (gridReady)="onGridReady($event)">
+
+  </ag-grid-angular>
+
+  <div>
+    <!-- {{selectedName|json}} -->
+    <!-- {{userId}} -->
+  </div>
+</div>

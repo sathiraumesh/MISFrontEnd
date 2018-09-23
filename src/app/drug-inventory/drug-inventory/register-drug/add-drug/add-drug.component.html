@@ -1,3 +1,54 @@
-<p>
-  add-drug works!
-</p>
+<div class="parent-container" fxLayout="row" fxLayoutAlign="center center">
+
+  <div fxLayout="row" fxFlex.lt-xs="80" fxFlex.gt-xs="50" fxLayoutAlign="strech">
+    <mat-card fxFlex="100" fxLayout="column" fxLayoutAlign="none strech">
+      <mat-card-header>
+        Drug Registry
+      </mat-card-header>
+
+      <mat-card-content fxLayout="column" fxLayoutAlign="none strech">
+
+        <form #frm="ngForm" fxLayout="column" (ngSubmit)=registerDrug(frm)>
+
+          <mat-form-field class="example-full-width">
+            <input matInput #drId="ngModel" name="drugId" [(ngModel)]="drug.drugId" placeholder="Drug ID"
+              required>
+            <mat-error *ngIf="drId.errors?.required">
+              <strong>Drug Id is required</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput #drName="ngModel" name="drugName" [(ngModel)]="drug.drugName" placeholder="DrugName"
+              required>
+            <mat-error *ngIf="drName.errors?.required">
+              <strong>Drug Name is required</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput #drDosage="ngModel" name="drugDosage" [(ngModel)]="drug.dosage" placeholder="Dosage"
+              required>
+            <mat-error *ngIf="drName.errors?.required">
+              <strong>Dosage</strong>
+            </mat-error>
+          </mat-form-field>
+
+
+         
+
+
+
+          <div fxLayout="row" class="add-button">
+            <button  mat-raised-button color="primary" fxFlex="40">Register</button>
+          </div>
+
+
+        </form>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+
+
+  <!-- {{frm.value|json}} -->

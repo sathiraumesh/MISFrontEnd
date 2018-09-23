@@ -10,6 +10,9 @@ import { RegisterDrugComponent } from './drug-inventory/register-drug/register-d
 import { HomeComponent } from 'src/app/drug-inventory/drug-inventory/home/home.component';
 import { AddDrugComponent } from './drug-inventory/register-drug/add-drug/add-drug.component';
 import { DrugListComponent } from './drug-inventory/register-drug/drug-list/drug-list.component';
+import { FormsModule } from '@angular/forms';
+import { InventoryComponent } from './drug-inventory/inventory/inventory.component';
+import { AddDrugsComponent } from './drug-inventory/inventory/add-drugs/add-drugs.component';
 
 
 
@@ -19,7 +22,8 @@ import { DrugListComponent } from './drug-inventory/register-drug/drug-list/drug
   imports: [
     CommonModule,
     DrugInventoryRouteModule,
-    MaterialModules
+    MaterialModules,
+    FormsModule
   ],
   declarations: [
     HomeComponent,
@@ -27,7 +31,9 @@ import { DrugListComponent } from './drug-inventory/register-drug/drug-list/drug
     NavbarComponent,
     RegisterDrugComponent,
     AddDrugComponent,
-    DrugListComponent
+    DrugListComponent,
+    InventoryComponent,
+    AddDrugsComponent
   ],
   exports:[]
 })
