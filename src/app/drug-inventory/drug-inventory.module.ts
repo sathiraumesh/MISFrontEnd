@@ -10,11 +10,13 @@ import { RegisterDrugComponent } from './drug-inventory/register-drug/register-d
 import { HomeComponent } from 'src/app/drug-inventory/drug-inventory/home/home.component';
 import { AddDrugComponent } from './drug-inventory/register-drug/add-drug/add-drug.component';
 import { DrugListComponent } from './drug-inventory/register-drug/drug-list/drug-list.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { InventoryComponent } from './drug-inventory/inventory/inventory.component';
 import { AddDrugsComponent } from './drug-inventory/inventory/add-drugs/add-drugs.component';
 import {DrugListComponent as InventoryDrugListComponent} from "./drug-inventory/inventory/drug-list/drug-list.component";
-import { StockComponent } from './drug-inventory/inventory/stock/stock.component'
+import { StockComponent } from './drug-inventory/inventory/stock/stock.component';
+import { CreateStockComponent } from './drug-inventory/inventory/stock/create-stock/create-stock.component';
+import { SavedStockComponent } from './drug-inventory/inventory/stock/saved-stock/saved-stock.component'
 
 
 
@@ -25,7 +27,9 @@ import { StockComponent } from './drug-inventory/inventory/stock/stock.component
     CommonModule,
     DrugInventoryRouteModule,
     MaterialModules,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
+ 
   ],
   declarations: [
     HomeComponent,
@@ -37,7 +41,9 @@ import { StockComponent } from './drug-inventory/inventory/stock/stock.component
     InventoryComponent,
     AddDrugsComponent,
     InventoryDrugListComponent,
-    StockComponent
+    StockComponent,
+    CreateStockComponent,
+    SavedStockComponent
   ],
   exports:[]
 })

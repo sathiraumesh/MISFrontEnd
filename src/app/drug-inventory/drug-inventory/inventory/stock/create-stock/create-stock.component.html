@@ -1,0 +1,49 @@
+<mat-card>
+  <mat-card-header>NEW STOCK </mat-card-header>
+  <mat-card-content>
+    <div fxLayout="row">
+        <div>
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                  <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                  <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                      {{option}}
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+              </form>
+    
+        </div>
+
+        <div>
+            <button mat-raised-button color="primary" (click)=addItems()> add</button>
+
+        </div>
+    </div>
+    
+   
+   
+
+    <form [formGroup]="stockForm">
+        <div formArrayName="items">
+          <div *ngFor="let item of items.controls; let i=index" fxLayout="row" [formGroupName]="i">
+
+            <div>
+                <mat-form-field>
+                    <input matInput type="text" formControlName="drugName">
+                  </mat-form-field> 
+            </div>
+            
+
+           <div>
+              <button mat-raised-button color="warn" (click)="deleteItem(i)">delete</button>
+           </div>
+          </div>
+        </div>
+    </form>
+  </mat-card-content>
+
+  {{stockForm.value|json}}
+  
+</mat-card>

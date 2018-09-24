@@ -4,7 +4,7 @@
       <div fxLayout="row" fxLayoutAlign="center">
           <ag-grid-angular fxFlex="80" style="height: 50vh;" class="ag-theme-balham" [rowData]="rowData" [columnDefs]="columnDefs"
             [enableSorting]="true" [enableFilter]="true" rowSelection="single" [animateRows]="true" (selectionChanged)="onRowSelectedChange($event)"
-            (gridReady)="onGridReady($event)">
+           >
         
           </ag-grid-angular>
         
@@ -19,12 +19,18 @@
   <mat-tab label="MANAGE STOCKS"> 
       <mat-card>
         <mat-card-content fxLayout="row">
-            <a [routerLink]="['/drugs/register']"><button mat-button>CREATE STOCKS</button></a>
-            <button mat-raised-button >Saved Stocks </button>
+            <a [routerLink]="['/drugs/inventory/stock/managestocks']"><button mat-raised-button>CREATE STOCKS</button></a>
+            <a [routerLink]="['/drugs/inventory/stock/savedstocks']"><button mat-raised-button>SAVED STOCKS</button></a>
 
-            <router-outlet></router-outlet>
+           
         </mat-card-content>
-      </mat-card>  
+      </mat-card> 
+      
+    <mat-card>
+      <mat-card-content>
+          <router-outlet></router-outlet>
+      </mat-card-content>
+    </mat-card>
   </mat-tab>
   <mat-tab label="Third"> Content 3 </mat-tab>
 </mat-tab-group>

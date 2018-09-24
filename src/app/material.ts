@@ -16,6 +16,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTabsModule} from '@angular/material/tabs';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 
 
@@ -38,7 +39,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatListModule,
     MatDividerModule,
     MatDialogModule,
-    MatTabsModule
+    MatTabsModule,
+    MatAutocompleteModule
    
     
    
@@ -63,7 +65,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatListModule,
     MatDividerModule,
     MatDialogModule,
-    MatTabsModule
+    MatTabsModule,
+    MatAutocompleteModule
     
     
 
