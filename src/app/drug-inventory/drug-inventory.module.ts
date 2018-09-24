@@ -13,6 +13,8 @@ import { DrugListComponent } from './drug-inventory/register-drug/drug-list/drug
 import { FormsModule } from '@angular/forms';
 import { InventoryComponent } from './drug-inventory/inventory/inventory.component';
 import { AddDrugsComponent } from './drug-inventory/inventory/add-drugs/add-drugs.component';
+import {DrugListComponent as InventoryDrugListComponent} from "./drug-inventory/inventory/drug-list/drug-list.component";
+import { StockComponent } from './drug-inventory/inventory/stock/stock.component'
 
 
 
@@ -33,7 +35,9 @@ import { AddDrugsComponent } from './drug-inventory/inventory/add-drugs/add-drug
     AddDrugComponent,
     DrugListComponent,
     InventoryComponent,
-    AddDrugsComponent
+    AddDrugsComponent,
+    InventoryDrugListComponent,
+    StockComponent
   ],
   exports:[]
 })

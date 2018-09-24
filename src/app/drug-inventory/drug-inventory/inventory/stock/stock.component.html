@@ -1,0 +1,30 @@
+<mat-tab-group>
+  <mat-tab label="STATS"> 
+      <div class="spacer"></div>
+      <div fxLayout="row" fxLayoutAlign="center">
+          <ag-grid-angular fxFlex="80" style="height: 50vh;" class="ag-theme-balham" [rowData]="rowData" [columnDefs]="columnDefs"
+            [enableSorting]="true" [enableFilter]="true" rowSelection="single" [animateRows]="true" (selectionChanged)="onRowSelectedChange($event)"
+            (gridReady)="onGridReady($event)">
+        
+          </ag-grid-angular>
+        
+          <div>
+            <!-- {{selectedName|json}} -->
+            <!-- {{userId}} -->
+          </div>
+        </div>  
+  </mat-tab>
+
+
+  <mat-tab label="MANAGE STOCKS"> 
+      <mat-card>
+        <mat-card-content fxLayout="row">
+            <a [routerLink]="['/drugs/register']"><button mat-button>CREATE STOCKS</button></a>
+            <button mat-raised-button >Saved Stocks </button>
+
+            <router-outlet></router-outlet>
+        </mat-card-content>
+      </mat-card>  
+  </mat-tab>
+  <mat-tab label="Third"> Content 3 </mat-tab>
+</mat-tab-group>

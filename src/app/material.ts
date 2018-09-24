@@ -14,6 +14,7 @@ import {AgGridModule } from 'ag-grid-angular';
 import {MatListModule} from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatTabsModule} from '@angular/material/tabs';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 
@@ -36,7 +37,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AgGridModule.withComponents([]),
     MatListModule,
     MatDividerModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTabsModule
    
     
    
@@ -60,7 +62,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AgGridModule,
     MatListModule,
     MatDividerModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTabsModule
     
     
 
