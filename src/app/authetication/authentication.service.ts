@@ -21,13 +21,15 @@ export class AuthenticationService {
 
   //function for authenticating user and routing them to the correct direction
   authenticateUser() {
+
     console.log(this.getUserpermissions());
+
     if (this.getUserpermissions() === "1") {
       console.log(this.getUserpermissions());
       console.log(this.getUserId());
       this.router.navigate(["/drugs"]);
     }
-    else if (this.getUserpermissions() ==="Admin") {
+    else if (this.getUserpermissions() === "Admin") {
       console.log(this.getUserId());
       console.log(this.getUserpermissions());
       this.router.navigate(["/admin"]);
@@ -43,18 +45,18 @@ export class AuthenticationService {
     if (this.loggedIn()) {
       return this.getDecodedAccessToken(localStorage.getItem("token")).role;
     } else {
-
+      return null;
     }
   }
 
-  getUserId(){
-    if(this.loggedIn()){
+  getUserId() {
+    if (this.loggedIn()) {
       return this.getDecodedAccessToken(localStorage.getItem("token")).id;
     }
   }
 
 
-// function for decoding the access token
+  // function for decoding the access token
   getDecodedAccessToken(token: string): any {
     try {
       return jwt_decode(token);
@@ -64,7 +66,7 @@ export class AuthenticationService {
     }
   }
 
-// function for clearing the local storage for clearing out the user
+  // function for clearing the local storage for clearing out the user
   logout() {
     localStorage.clear();
   }
