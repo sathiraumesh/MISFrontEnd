@@ -5,7 +5,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminModuleRoutes } from './admin.module.routes';
 import { MaterialModules } from '../material';
 import { CoreModule } from '../core/core.module';
-import { FlexLayoutModule } from '@angular/flex-layout';
+// import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UsersComponent } from './admin/users/users.component';
@@ -26,7 +26,6 @@ import { StudentComponent } from './admin/student/student.component';
     AdminModuleRoutes,
     MaterialModules,
     CoreModule,
-    FlexLayoutModule,
     FormsModule,
 
   ],

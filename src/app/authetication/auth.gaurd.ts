@@ -4,29 +4,11 @@ import { AuthenticationService } from "./authentication.service";
 
 @Injectable()
 
-export class UserAuthGaurd implements CanActivate {
-    constructor(private authService: AuthenticationService, private router: Router) { }
-    canActivate(): boolean {
-
-        if(this.authService.getUserpermissions()===1){
-            return true;
-        }
-        else if(this.authService.getUserpermissions()===2){
-            return true;
-        }
-        else{
-            this.router.navigate(["/login"]);
-            return false;
-        }
-
-
-    }
-}
 
 export class AdminAuthGaurd implements CanActivate {
     constructor(private authService: AuthenticationService, private router: Router) { }
     canActivate(): boolean {
-        if(this.authService.getUserpermissions()===2){
+        if(this.authService.getUserpermissions()==="Admin"){
                 return true;
         }
         else{
@@ -35,3 +17,31 @@ export class AdminAuthGaurd implements CanActivate {
 
     }
 }
+
+@Injectable()
+
+export class DoctorAuthGaurd implements CanActivate {
+    constructor(private authService: AuthenticationService, private router: Router) { }
+    canActivate(): boolean {
+        if(this.authService.getUserpermissions()==="Doctor"){
+                return true;
+        }
+        else{
+            this.router.navigate(["/login"]);
+        }
+
+    }
+}
+
+// export class Nurse implements CanActivate {
+//     constructor(private authService: AuthenticationService, private router: Router) { }
+//     canActivate(): boolean {
+//         if(this.authService.getUserpermissions()==="Nurse"){
+//                 return true;
+//         }
+//         else{
+//             this.router.navigate(["/login"]);
+//         }
+
+//     }
+// }

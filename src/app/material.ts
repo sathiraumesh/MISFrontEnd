@@ -10,15 +10,19 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import { AgGridModule } from 'ag-grid-angular';
+import {AgGridModule } from 'ag-grid-angular';
 import {MatListModule} from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatTabsModule} from '@angular/material/tabs';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 
 
 @NgModule({
   imports: [
+    FlexLayoutModule,
     MatButtonModule, 
     MatInputModule,
     MatFormFieldModule,
@@ -34,7 +38,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     AgGridModule.withComponents([]),
     MatListModule,
     MatDividerModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTabsModule,
+    MatAutocompleteModule
    
     
    
@@ -43,6 +49,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     
 ],
   exports:[
+    FlexLayoutModule,
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,
@@ -57,7 +64,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     AgGridModule,
     MatListModule,
     MatDividerModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTabsModule,
+    MatAutocompleteModule
     
     
 
