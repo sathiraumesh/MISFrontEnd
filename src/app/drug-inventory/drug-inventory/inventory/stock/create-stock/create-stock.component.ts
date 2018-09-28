@@ -3,7 +3,7 @@ import { FormControl, Form } from '@angular/forms';
 import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { DrugInventoryService } from '../../../../../core/drug-inventory.service';
-import {map, startWith} from 'rxjs/operators';
+import { map, startWith } from 'rxjs/operators';
 
 
 
@@ -14,13 +14,15 @@ import {map, startWith} from 'rxjs/operators';
 })
 export class CreateStockComponent implements OnInit {
 
-  drugList:any;
+  stockDrugContainer = [];
+  selectdeOption: any = null;
+  drugList: any;
   myControl = new FormControl();
   stockForm: FormGroup;
-  options: string[]=[];
+  options: string[] = [];
   filteredOptions: Observable<string[]>;
 
-  constructor(private formBuilder: FormBuilder,private drugService:DrugInventoryService) {
+  constructor(private formBuilder: FormBuilder, private drugService: DrugInventoryService) {
 
   }
 
@@ -30,7 +32,7 @@ export class CreateStockComponent implements OnInit {
     this.stockForm = this.formBuilder.group({
       items: this.formBuilder.array([])
     });
-    
+
     this.filteredOptions = this.myControl.valueChanges
       .pipe(
         startWith(''),
@@ -45,43 +47,82 @@ export class CreateStockComponent implements OnInit {
 
   addItems() {
 
-    const item = this.formBuilder.group({
-      drugId:"",
-      drugName:"",
-      dosage:"",
-      quantity: ""
-    });
 
-    this.items.push(item);
+    if (!(this.selectdeOption == null)) {
+
+
+      console.log(this.selectdeOption);
+
+      if (!this.stockDrugContainer.includes(this.selectdeOption)) {
+
+        const item = this.formBuilder.group({
+          drugId: "",
+          drugName: this.selectdeOption,
+          dosage: "",
+          quantity: ""
+        });
+
+        this.stockDrugContainer.push(this.selectdeOption);
+        this.items.push(item);
+        console.log(this.stockDrugContainer);
+      }
+
+
+    }
+
+
+
   }
 
-  deleteItem(i){
-    this.items.removeAt(i);
+
+
+
+  deleteItem(i) {
+
+    console.log(this.stockDrugContainer);
+    console.log(this.items.at(i).value);
+    var index =this.stockDrugContainer.indexOf(this.items.at(i).value.drugName);
+    if(index>-1){
+      console.log("conatined in the array");
+      this.stockDrugContainer.splice(index,1);
+      console.log(this.stockDrugContainer);
+
+    }
+     this.items.removeAt(i);
+    
   }
 
-  getDrugDetails(){
-    this.drugService.getDrugList().subscribe(data=>{
-      this.drugList=data;
-      this.options=this.getDrugList(data);
+
+
+
+  getDrugDetails() {
+    this.drugService.getDrugList().subscribe(data => {
+      this.drugList = data;
+      this.options = this.getDrugList(data);
       console.log(data);
       console.log(this.options);
-    },err=>{
+    }, err => {
 
     });
   }
 
-  getDrugList(data:any []){
-    let drugListNames:string[]=[];
 
-      data.forEach(function(item){
-        let detail = item.drugName+" "+item.dosage;
-        console.log(detail);
-        drugListNames.push(detail);
-      });
+  getDrugList(data: any[]) {
+    let drugListNames: string[] = [];
 
-      return drugListNames;
+    data.forEach(function (item) {
+      let detail = item.drugName + " " + item.dosage;
+      console.log(detail);
+      drugListNames.push(detail);
+    });
+
+    return drugListNames;
   }
 
+
+  displayFn(drug): string | undefined {
+    return drug;
+  }
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
@@ -90,5 +131,15 @@ export class CreateStockComponent implements OnInit {
   }
 
 
+
+
+  getselectedOption(option) {
+    this.selectdeOption = option;
+    // console.log(this.selectdeOption);
+  }
+
+clearBox(event){
+    console.log(event.target.value="");
+}
 
 }
