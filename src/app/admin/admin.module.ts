@@ -20,7 +20,6 @@ import { StudentComponent } from './admin/student/student.component';
 
 
 
-
 @NgModule({
   imports: [
     CommonModule,
