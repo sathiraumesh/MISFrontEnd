@@ -51,20 +51,23 @@ export class CreateStockComponent implements OnInit {
     if (!(this.selectdeOption == null)) {
 
 
-      console.log(this.selectdeOption);
+       console.log(this.selectdeOption);
 
       if (!this.stockDrugContainer.includes(this.selectdeOption)) {
+        var detailSplit =  this.selectdeOption.split(" ");
 
+        console.log(detailSplit);
         const item = this.formBuilder.group({
-          drugId: "",
-          drugName: this.selectdeOption,
-          dosage: "",
+          drugId:detailSplit[3],
+          drugName:detailSplit[0],
+          dosage:detailSplit[1]+detailSplit[2],
           quantity: ""
         });
 
         this.stockDrugContainer.push(this.selectdeOption);
         this.items.push(item);
-        console.log(this.stockDrugContainer);
+      
+       console.log(this.stockDrugContainer);
       }
 
 
@@ -79,17 +82,18 @@ export class CreateStockComponent implements OnInit {
 
   deleteItem(i) {
 
+    console.log("deleting values");
     console.log(this.stockDrugContainer);
     console.log(this.items.at(i).value);
-    var index =this.stockDrugContainer.indexOf(this.items.at(i).value.drugName);
-    if(index>-1){
-      console.log("conatined in the array");
-      this.stockDrugContainer.splice(index,1);
-      console.log(this.stockDrugContainer);
+    var index = this.stockDrugContainer.indexOf(this.items.at(i).value.drugName);
+    if (index > -1) {
+       console.log("conatined in the array");
+      this.stockDrugContainer.splice(index, 1);
+       console.log(this.stockDrugContainer);
 
     }
-     this.items.removeAt(i);
-    
+    this.items.removeAt(i);
+
   }
 
 
@@ -99,8 +103,8 @@ export class CreateStockComponent implements OnInit {
     this.drugService.getDrugList().subscribe(data => {
       this.drugList = data;
       this.options = this.getDrugList(data);
-      console.log(data);
-      console.log(this.options);
+      // console.log(data);
+      // console.log(this.options);
     }, err => {
 
     });
@@ -111,8 +115,8 @@ export class CreateStockComponent implements OnInit {
     let drugListNames: string[] = [];
 
     data.forEach(function (item) {
-      let detail = item.drugName + " " + item.dosage;
-      console.log(detail);
+      let detail = item.drugName +" "+ item.dosage+" "+item.drugId;
+      // console.log(detail);
       drugListNames.push(detail);
     });
 
@@ -120,9 +124,7 @@ export class CreateStockComponent implements OnInit {
   }
 
 
-  displayFn(drug): string | undefined {
-    return drug;
-  }
+
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
@@ -138,8 +140,12 @@ export class CreateStockComponent implements OnInit {
     // console.log(this.selectdeOption);
   }
 
-clearBox(event){
-    console.log(event.target.value="");
-}
+
+  clearBox(event) {
+    // console.log(event.target.value = "");
+  }
+
+
+
 
 }

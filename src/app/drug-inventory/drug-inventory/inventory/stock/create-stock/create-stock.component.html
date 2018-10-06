@@ -2,48 +2,66 @@
   <mat-card-header>NEW STOCK </mat-card-header>
   <mat-card-content>
     <div fxLayout="row">
-        <div>
-            <form #frm="ngForm" class="example-form" >
-                <mat-form-field class="example-full-width">
-                  <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl"   [matAutocomplete]="auto" (focus)="clearBox($event)" >
-                  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn"  >
-                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option" (click)="getselectedOption(option)">
-                      {{option}}
-                    </mat-option>
-                  </mat-autocomplete>
-                </mat-form-field>
-              </form>
-    
-        </div>
+      <div>
+        <form #frm="ngForm" class="example-form">
+          <mat-form-field class="example-full-width">
+            <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl"
+              [matAutocomplete]="auto" (focus)="clearBox($event)">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+              <mat-option *ngFor="let option of filteredOptions | async" [value]="option" (click)="getselectedOption(option)">
+                {{option}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </form>
 
-        <div>
-            <button mat-raised-button color="primary" (click)=addItems()> add</button>
+      </div>
 
-        </div>
+      <div>
+        <button mat-raised-button color="primary" (click)=addItems()> add</button>
+
+      </div>
     </div>
-    
-   
-   
+
+
+
 
     <form [formGroup]="stockForm">
-        <div formArrayName="items">
-          <div *ngFor="let item of items.controls; let i=index" fxLayout="row" [formGroupName]="i">
+      <div formArrayName="items">
+        <div *ngFor="let item of items.controls; let i=index" fxLayout="row" [formGroupName]="i">
 
-            <div>
-                <mat-form-field>
-                    <input matInput type="text" formControlName="drugName">
-                  </mat-form-field> 
-            </div>
-            
+          <mat-form-field>
+            <input matInput type="text" formControlName="drugId">
+          </mat-form-field>
+          <div>
+            <mat-form-field>
+              <input matInput type="text" formControlName="drugName">
+            </mat-form-field>
 
-           <div>
-              <button mat-raised-button color="warn" (click)="deleteItem(i)">delete</button>
-           </div>
+
+
+          </div>
+
+          <div>
+            <mat-form-field>
+              <input matInput type="text" formControlName="dosage">
+            </mat-form-field>
+          </div>
+
+          <div>
+            <mat-form-field>
+              <input matInput type="text" formControlName="quantity">
+            </mat-form-field>
+          </div>
+
+          <div>
+            <button mat-raised-button color="warn" (click)="deleteItem(i)">delete</button>
           </div>
         </div>
+      </div>
     </form>
   </mat-card-content>
 
   {{stockForm.value|json}}
-  
+
 </mat-card>

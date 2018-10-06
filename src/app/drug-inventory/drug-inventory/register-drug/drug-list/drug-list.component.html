@@ -1,7 +1,11 @@
+
+  <h1>Registerd Drugs</h1>
 <div fxLayout="row" fxLayoutAlign="center">
-  <ag-grid-angular fxFlex="80" style="height: 50vh;" class="ag-theme-balham" [rowData]="rowData" [columnDefs]="columnDefs"
+  <ag-grid-angular fxFlex="40" style="height: 50vh;" class="ag-theme-balham" [rowData]="rowData" [columnDefs]="columnDefs"
     [enableSorting]="true" [enableFilter]="true" rowSelection="single" [animateRows]="true" (selectionChanged)="onRowSelectedChange($event)"
-    (gridReady)="onGridReady($event)">
+    (gridReady)="onGridReady($event)" 
+    
+    >
 
   </ag-grid-angular>
 
@@ -9,4 +13,12 @@
     <!-- {{selectedName|json}} -->
     <!-- {{userId}} -->
   </div>
+
+
+  
+</div>
+
+<div>
+  <button mat-raised-button color="accent" (click)=openDialog()>Delete</button>
+  <button mat-raised-button color="accent" (click)=editDialog()>Update</button>
 </div>

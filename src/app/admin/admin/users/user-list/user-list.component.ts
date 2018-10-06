@@ -37,6 +37,7 @@ export class UserListComponent implements OnInit {
   }
 
 
+  
   private columnDefs;
   private rowData: any;
   private gridApi;

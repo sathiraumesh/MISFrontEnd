@@ -1,0 +1,57 @@
+ 
+
+
+    <mat-card fxFlex="100" fxLayout="column" fxLayoutAlign="none strech">
+      <mat-card-header>
+        Drug Registry
+      </mat-card-header>
+
+      <mat-card-content fxLayout="column" fxLayoutAlign="none strech">
+
+        <form #frm="ngForm" fxLayout="column" >
+
+          <mat-form-field class="example-full-width">
+            <input matInput #drId="ngModel" disabled name="drugId" [(ngModel)]="data.drugId" placeholder="Drug ID"
+              required>
+            <mat-error *ngIf="drId.errors?.required">
+              <strong>Drug Id is required</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput #drName="ngModel" name="drugName" [(ngModel)]="data.drugName" placeholder="DrugName"
+              required>
+            <mat-error *ngIf="drName.errors?.required">
+              <strong>Drug Name is required</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput #drDosage="ngModel" name="drugDosage" [(ngModel)]="data.dosage" placeholder="Dosage"
+              required>
+            <mat-error *ngIf="drName.errors?.required">
+              <strong>Dosage</strong>
+            </mat-error>
+          </mat-form-field>
+
+
+         
+
+
+
+          <div fxLayout="row" class="add-button">
+            <button  mat-raised-button color="primary" fxFlex="40" (click)="editDrug(frm,data)">Editr</button>
+            <button  mat-raised-button color="primary" fxFlex="40"  (click)="closeDialog()">Cancel</button>
+          </div>
+
+
+        </form>
+      </mat-card-content>
+    </mat-card>
+
+  
+
+
+  <!-- {{frm.value|json}} -->
+
+  
