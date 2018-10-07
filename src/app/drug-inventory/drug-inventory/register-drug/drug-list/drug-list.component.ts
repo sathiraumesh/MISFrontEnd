@@ -125,6 +125,7 @@ export class DrugListComponent implements OnInit {
           data: this.drug,
           autoFocus: false
         });
+        dialogRef.disableClose = true;
 
         dialogRef.afterClosed().subscribe(result => {
 
@@ -137,10 +138,10 @@ export class DrugListComponent implements OnInit {
               console.log(selectedData[0].drugName=result.data.drugName);
               console.log(selectedData[0].dosage=result.data.dosage);
               var res = this.gridApi.updateRowData({ update: selectedData });
-
+              
             },err=>{});
          }else{
-
+        
          }
 
         });

@@ -6,10 +6,11 @@
         <form #frm="ngForm" class="example-form">
           <mat-form-field class="example-full-width">
             <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl"
-              [matAutocomplete]="auto" (focus)="clearBox($event)">
+              [matAutocomplete]="auto">
+              <!-- (focus)="clearBox($event)" -->
             <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-              <mat-option *ngFor="let option of filteredOptions | async" [value]="option" (click)="getselectedOption(option)">
-                {{option}}
+              <mat-option *ngFor="let option of filteredOptions | async" [value]="option"  (click)="getselectedOption(option)" > 
+                {{option.drugName}}    {{option.dosage}}
               </mat-option>
             </mat-autocomplete>
           </mat-form-field>
@@ -23,6 +24,8 @@
       </div>
     </div>
 
+    
+
 
 
 
@@ -30,12 +33,10 @@
       <div formArrayName="items">
         <div *ngFor="let item of items.controls; let i=index" fxLayout="row" [formGroupName]="i">
 
-          <mat-form-field>
-            <input matInput type="text" formControlName="drugId">
-          </mat-form-field>
+          
           <div>
             <mat-form-field>
-              <input matInput type="text" formControlName="drugName">
+              <input matInput type="text" formControlName="drugName" >
             </mat-form-field>
 
 
@@ -50,7 +51,7 @@
 
           <div>
             <mat-form-field>
-              <input matInput type="text" formControlName="quantity">
+              <input matInput type="text"  required formControlName="quantity">
             </mat-form-field>
           </div>
 
@@ -60,8 +61,14 @@
         </div>
       </div>
     </form>
+
+
+
   </mat-card-content>
 
+
+  <button mat-raised-button color="warn" (click)="saveStock()">Save</button>
+  <button mat-raised-button color="warn" >Cancel</button>
   {{stockForm.value|json}}
 
 </mat-card>

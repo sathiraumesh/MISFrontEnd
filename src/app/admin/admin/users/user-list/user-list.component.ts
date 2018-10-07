@@ -13,12 +13,12 @@ export class UserListComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) {
 
     this.columnDefs = [
-      { headerName: 'First Name', field: 'firstName', },
-      { headerName: 'Last Name', field: 'lastName', },
-      { headerName: 'Birth Day', field: 'dateOfBirth' },
-      { headerName: 'NIC Number', field: 'nic' },
-      { headerName: "Role", field: 'role', suppressFilter: true },
-      { headerName: "Contact Number", field: 'telePhoneNumber' }
+      { headerName: 'FIRST NAME', field: 'firstName', },
+      { headerName: 'LAST NAME', field: 'lastName', },
+      { headerName: 'BIRTH DAY', field: 'dateOfBirth' },
+      { headerName: 'NIC NUMBER', field: 'nic' },
+      { headerName: "ROLE", field: 'role', suppressFilter: true },
+      { headerName: "CONTACT NUMBER", field: 'telePhoneNumber' }
 
 
     ];
@@ -46,6 +46,8 @@ export class UserListComponent implements OnInit {
   private userId;
   private rowSelected: boolean = false;
   private selectedRole = "ALL";
+  private searchToggle=false;
+  private searchNic=null;
 
 
 
@@ -81,6 +83,51 @@ export class UserListComponent implements OnInit {
     this.gridApi.onFilterChanged();
   }
 
+  selectByNIC(event){
+    console.log(event.target.value);
+    var selctedRows=this.gridApi.deselectAll();
+    var roleFilterComponent = this.gridApi.getFilterInstance("nic");
+    
+      roleFilterComponent.setModel({
+        type: "contains",
+        filter:event.target.value
+      });
+      this.rowSelected = false;
+      this.gridApi.onFilterChanged();
+    
+    
+  }
+
+  selectByFirstName(event){
+    console.log(event.target.value);
+    var selctedRows=this.gridApi.deselectAll();
+    var roleFilterComponent = this.gridApi.getFilterInstance("firstName");
+    
+      roleFilterComponent.setModel({
+        type: "contains",
+        filter:event.target.value
+      });
+      this.rowSelected = false;
+      this.gridApi.onFilterChanged();
+    
+    
+  }
+
+  selectByLastName(event){
+    console.log(event.target.value);
+    var selctedRows=this.gridApi.deselectAll();
+    var roleFilterComponent = this.gridApi.getFilterInstance("lastName");
+    
+      roleFilterComponent.setModel({
+        type: "contains",
+        filter:event.target.value
+      });
+      this.rowSelected = false;
+      this.gridApi.onFilterChanged();
+    
+    
+  }
+
   selectAll() {
     var selctedRows=this.gridApi.deselectAll();
     var roleFilterComponent = this.gridApi.getFilterInstance("role");
@@ -91,7 +138,7 @@ export class UserListComponent implements OnInit {
 
 
   selectNurses() {
-    var selctedRows=this.gridApi.deselectAll();
+     var selctedRows=this.gridApi.deselectAll();
     var roleFilterComponent = this.gridApi.getFilterInstance("role");
     roleFilterComponent.setModel({
       type: "equals",
@@ -102,5 +149,57 @@ export class UserListComponent implements OnInit {
     this.gridApi.onFilterChanged();
   }
 
+
+  clearFilters(fil1,fil2,fil3,fil0){
+    fil0.value="ALL";
+    fil1.value="";
+    fil2.value="";
+    fil3.value=""
+    this.selectAll();
+
+    var selctedRows=this.gridApi.deselectAll();
+    var roleFilterComponent = this.gridApi.getFilterInstance("lastName");
+    
+      roleFilterComponent.setModel({
+        type: "contains",
+        filter:""
+      });
+     
+
+
+       selctedRows=this.gridApi.deselectAll();
+     roleFilterComponent = this.gridApi.getFilterInstance("firstName");
+    
+      roleFilterComponent.setModel({
+        type: "contains",
+        filter:""
+      });
+    
+
+
+       selctedRows=this.gridApi.deselectAll();
+     roleFilterComponent = this.gridApi.getFilterInstance("nic");
+    
+      roleFilterComponent.setModel({
+        type: "contains",
+        filter:""
+      });
+
+      this.rowSelected = false;
+      this.gridApi.onFilterChanged();
+
+  }
+
+  toggleSearch(){
+    if(!this.searchToggle){
+      this.searchToggle=true;
+    }
+    else{
+      this.searchToggle= false;
+    }
+   
+  }
+
+  
   
 }

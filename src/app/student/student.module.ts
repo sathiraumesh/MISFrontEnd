@@ -4,11 +4,13 @@ import { StudentComponent } from './student/student.component';
 import { StudentRouteModule } from './student.module.routes';
 import { StudentProfileComponent } from './student/student-profile/student-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MaterialModules } from '../material';
 
 @NgModule({
   imports: [
     CommonModule,
-    StudentRouteModule
+    StudentRouteModule,
+    MaterialModules
   ],
   declarations: [StudentComponent, StudentProfileComponent, NavbarComponent]
 })
