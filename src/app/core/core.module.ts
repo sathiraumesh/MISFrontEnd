@@ -4,6 +4,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { UserService } from './user.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DrugInventoryService } from './drug-inventory.service';
+import { StudentService } from './student.service';
 
 
 @NgModule({
@@ -11,9 +12,9 @@ import { DrugInventoryService } from './drug-inventory.service';
     CommonModule,
     FlexLayoutModule,
   ],
-  exports:[ FlexLayoutModule],
+  exports: [FlexLayoutModule],
   declarations: [ProfileComponent],
-  providers:[UserService,DrugInventoryService]
+  providers: [UserService, DrugInventoryService, StudentService]
 
 })
 export class CoreModule { }

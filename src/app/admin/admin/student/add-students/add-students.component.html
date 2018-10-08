@@ -1,0 +1,52 @@
+<div class="parent-container" fxLayout="row" fxLayoutAlign="center center">
+
+  <div fxLayout="row" fxFlex.lt-xs="80" fxFlex.gt-xs="50" fxLayoutAlign="strech">
+    <mat-card fxFlex="100" fxLayout="column" fxLayoutAlign="none strech">
+
+      <mat-card-header>
+        Add Students
+      </mat-card-header>
+
+      <mat-card-content fxLayout="column" fxLayoutAlign="none strech">
+
+        <form #frm="ngForm" fxLayout="column" (ngSubmit)=addStudent(frm)>
+
+          <mat-form-field class="example-full-width">
+            <input matInput #stdId="ngModel" name="studentId" [(ngModel)]="student.studentId" placeholder="Student Id" required>
+
+            <mat-error *ngIf="stdId.errors?.required"><strong>Student Id is required.</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput #stdName="ngModel" name="studentName" [(ngModel)]="student.studentName" placeholder="Student Name" required>
+
+            <mat-error *ngIf="stdName.errors?.required"><strong>Student Name is required.</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput #stdDOB="ngModel" name="studentDOB" [(ngModel)]="student.studentDOB" placeholder="Student DOB" required>
+
+            <mat-error *ngIf="stdDOB.errors?.required"><strong>Date of Birth is required.</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput #stdAge="ngModel" name="studentAge" [(ngModel)]="student.studentAge" placeholder="Student Age" required>
+
+            <mat-error *ngIf="stdAge.errors?.required"><strong>Student age is required.</strong>
+            </mat-error>
+          </mat-form-field>
+
+        </form>
+      </mat-card-content>
+
+      <div fxLayout="row" class="add-button">
+        <button mat-raised-button color="primary" fxFlex="40">Add Students</button>
+      </div>
+
+    </mat-card>
+
+  </div>
+</div>

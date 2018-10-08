@@ -9,16 +9,11 @@
 
       <div fxLayout="column" fxLayoutAlign="none strech">
 
-        <form #frm="ngForm" fxLayout="column" >
-
-
-
-
+        <form #frm="ngForm" fxLayout="column">
 
 
           <mat-form-field class="example-full-width">
-            <input matInput #fName="ngModel" name="firstName" [(ngModel)]="data.firstName" placeholder="First Name"
-              required>
+            <input matInput #fName="ngModel" name="firstName" [(ngModel)]="data.firstName" placeholder="First Name" required>
             <mat-error *ngIf="fName.errors?.required">
               <strong>first name required</strong>
             </mat-error>
@@ -26,8 +21,7 @@
 
 
           <mat-form-field class="example-full-width">
-            <input matInput #lName="ngModel" placeholder="Last Name" name="lastName" [(ngModel)]="data.lastName"
-              required>
+            <input matInput #lName="ngModel" placeholder="Last Name" name="lastName" [(ngModel)]="data.lastName" required>
             <mat-error *ngIf="lName.errors?.required">
               <strong>last name required</strong>
             </mat-error>
@@ -45,8 +39,7 @@
           </mat-form-field>
 
           <mat-form-field>
-            <mat-select #gender="ngModel" [(value)]="gender.selected" [(ngModel)]="data.gender" placeholder="Gender"
-              name="gender" required>
+            <mat-select #gender="ngModel" [(value)]="gender.selected" [(ngModel)]="data.gender" placeholder="Gender" name="gender" required>
               <mat-option value="Male">Male </mat-option>
               <mat-option value="Female">Female </mat-option>
             </mat-select>
@@ -69,8 +62,8 @@
           </mat-form-field>
 
           <mat-form-field>
-            <input matInput #dob="ngModel" [matDatepicker]="picker" placeholder="Date of birth" name="dateOfBirth"
-              [(ngModel)]=data.dateOfBirth required>
+            <input matInput #dob="ngModel" [matDatepicker]="picker" placeholder="Date of birth" name="dateOfBirth" [(ngModel)]=data.dateOfBirth
+              required>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
             <mat-error *ngIf="dob.errors?.required">
@@ -95,8 +88,7 @@
           </mat-form-field>
 
           <mat-form-field>
-            <input #nic="ngModel" type=text matInput placeholder="NIC Number" name="nic" [(ngModel)]="data.nic"
-              required pattern="^(\d{10}|\v{12})$">
+            <input #nic="ngModel" type=text matInput placeholder="NIC Number" name="nic" [(ngModel)]="data.nic" required pattern="^(\d{10}|\v{12})$">
 
             <mat-error *ngIf="nic.errors?.required">
               <strong> NIC number required</strong>
@@ -108,11 +100,11 @@
 
           </mat-form-field>
 
-          <div fxLayout="row" class="add-button" fxLayoutGap="20px" >
-            
+          <div fxLayout="row" class="add-button" fxLayoutGap="20px">
 
-            <button mat-raised-button  color="warn" (click)="editUser(frm,data)">Save</button>
-            <button mat-raised-button  (click)="closeDialog()">Cancel</button>
+
+            <button mat-raised-button color="warn" (click)="editUser(frm,data)">Save</button>
+            <button mat-raised-button (click)="closeDialog()">Cancel</button>
           </div>
 
 

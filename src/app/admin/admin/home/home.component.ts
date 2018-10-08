@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
       { headerName: 'First Name', field: 'firstName', },
       { headerName: 'Last Name', field: 'lastName', },
       { headerName: 'Birth Day', field: 'dateOfBirth' },
-      { headerName: "Role", field: 'role',suppressFilter: true }
+      { headerName: "Role", field: 'role', suppressFilter: true }
 
     ];
 
@@ -33,9 +33,4 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
 
   }
-
-
-  
-
-
 }
