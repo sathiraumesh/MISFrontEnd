@@ -15,5 +15,5 @@ export class Drug {
 }
 
 export class Students {
-    constructor(public studentId: string, public studentName: String, public studentDOB: string, public studentAge: String) { }
+    constructor(public studentIndexNumber: string, public studentName: String, public studentDOB: string, public studentAge: String) { }
 }

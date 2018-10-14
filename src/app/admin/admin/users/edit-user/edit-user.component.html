@@ -84,6 +84,9 @@
               <strong>Not a valid telephone number</strong>
             </mat-error>
 
+            <mat-error *ngIf="tele.errors?.maxlength||tele.errors?.pattern">
+              <strong>Not a valid telephone number</strong>
+            </mat-error>
 
           </mat-form-field>
 

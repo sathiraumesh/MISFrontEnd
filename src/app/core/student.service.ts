@@ -9,7 +9,7 @@ export class StudentService {
   constructor(private http: HttpClient) { }
 
   addStudent(student) {
-    return this.http.post<any>("api/student/", student);
+    return this.http.post<any>("/api/student/", student);
   }
 
 }

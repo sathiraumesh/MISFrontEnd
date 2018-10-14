@@ -13,7 +13,7 @@ export class AddStudentsComponent implements OnInit {
   constructor(private studentService: StudentService) { }
 
   private student: Students = {
-    studentId: "",
+    studentIndexNumber: "",
     studentName: "",
     studentDOB: "",
     studentAge: ""
