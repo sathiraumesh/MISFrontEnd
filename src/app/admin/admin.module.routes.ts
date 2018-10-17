@@ -30,9 +30,9 @@ const routes: Routes = [
             },
             {
                 path: "students", component: StudentComponent, children: [
-                    { path: "addStudent", component: AddStudentsComponent },
-                    { path: "studentProfile", component: StudentProfileComponent },
-                    { path: "manageStudents", component: ManageStudentMedicalHistoryComponent }
+                    { path: "addstudent", component: AddStudentsComponent },
+                    { path: "studentprofile", component: StudentProfileComponent },
+                    { path: "managestudents", component: ManageStudentMedicalHistoryComponent }
                 ]
             }
         ]
