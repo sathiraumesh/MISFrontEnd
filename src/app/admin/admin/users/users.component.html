@@ -1,26 +1,24 @@
 <div class="parent-container">
 
-    <mat-sidenav-container  class="side-nav-container">
-      <mat-sidenav  #sidenav mode="side" opened>
+  <mat-sidenav-container class="side-nav-container">
+    <mat-sidenav #sidenav mode="side" opened>
+      <div>
         <div>
-          <div>
-           <a routerLink="/admin/users/home"> <button mat-raised-button color="primary" class="side-nav-button">List</button></a>
-          </div>
-          <div>
-              <a routerLink="/admin/users/adduser"><button mat-raised-button color="primary" class="side-nav-button">Add User</button></a>
-          </div>
+          <a routerLink="/admin/users/home"> <button mat-raised-button color="primary" class="side-nav-button">List</button></a>
         </div>
-      </mat-sidenav>
-      <mat-sidenav-content  class="main-content"><button mat-icon-button (click)="sidenav.toggle()" color="warn" class="material-icons"><mat-icon
-            aria-label="Example icon-button with a heart icon">list</mat-icon></button>
-  
         <div>
-          <router-outlet></router-outlet>
+          <a routerLink="/admin/users/adduser"><button mat-raised-button color="primary" class="side-nav-button">Add User</button></a>
         </div>
-      </mat-sidenav-content>
-  
-  
-  
-    </mat-sidenav-container>
-  
-  </div>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content class="main-content"><button mat-icon-button (click)="sidenav.toggle()" color="warn" class="material-icons"><mat-icon
+          aria-label="Example icon-button with a heart icon">list</mat-icon></button>
+
+      <div>
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+
+</div>

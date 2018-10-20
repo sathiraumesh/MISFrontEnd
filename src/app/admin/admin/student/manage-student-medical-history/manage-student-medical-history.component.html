@@ -4,20 +4,12 @@
     <div fxFlex="column" fxflex="100" fxLayoutAlign="None strech">
 
       <div>
-        <h4>Manage Students</h4>
+        <h3>Manage Students</h3>
       </div>
 
       <div class="container" fxLayout="column" fxLayoutAlign="none strech">
 
         <form #frm="ngForm" fxLayout="column">
-
-          <!-- <mat-form-field class="example-full-width">
-            <input matInput #stdIndex="ngModel" name="studentId" [(ngModel)]="student.studentIndexNumber" placeholder="Student Index Number"
-              required>
-
-            <mat-error *ngIf="stdIndex.errors?.required"><strong>Student Index Number is required.</strong>
-            </mat-error>
-          </mat-form-field> -->
 
           <mat-form-field class="example-full-width">
             <input matInput #stdIndex="ngModel" name="studentId" [(ngModel)]="student.studentIndexNumber" placeholder="Student Index Number"
