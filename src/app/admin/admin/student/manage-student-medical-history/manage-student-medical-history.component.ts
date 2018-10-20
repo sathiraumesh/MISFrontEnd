@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentService } from '../../../../core/student.service';
+import { Students } from '../../../../models';
 
 @Component({
   selector: 'app-manage-student-medical-history',
@@ -7,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManageStudentMedicalHistoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private studentService: StudentService) { }
+
+  private student: Students = {
+    studentIndexNumber: "",
+    studentName: "",
+    studentDOB: "",
+    studentAge: ""
+  };
 
   ngOnInit() {
   }
