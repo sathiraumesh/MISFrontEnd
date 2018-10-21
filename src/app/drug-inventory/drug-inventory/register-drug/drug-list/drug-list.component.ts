@@ -25,6 +25,7 @@ export class DrugListComponent implements OnInit {
   private selectedDrug: any = null;
   private drugId = null;
   private drug = null;
+  private searchToggle = false;
 
 
 
@@ -36,7 +37,7 @@ export class DrugListComponent implements OnInit {
       { headerName: 'Dosage', field: 'dosage' }
     ];
 
-   
+
 
   }
 
@@ -45,8 +46,8 @@ export class DrugListComponent implements OnInit {
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
     this.getDrugList();
-    
-    
+
+
   }
 
 
@@ -56,9 +57,9 @@ export class DrugListComponent implements OnInit {
       this.selectedDrug = element;
       this.drugId = this.selectedDrug.drugId;
       console.log(this.drugId);
-     
+
       this.rowSelected = true;
-      
+
     });
 
   }
@@ -77,6 +78,67 @@ export class DrugListComponent implements OnInit {
     }, err => {
       console.log(err)
     });
+  }
+
+
+  selectByDrugID(event) {
+    console.log(event.target.value);
+    var selctedRows = this.gridApi.deselectAll();
+    var roleFilterComponent = this.gridApi.getFilterInstance("drugId");
+
+    roleFilterComponent.setModel({
+      type: "contains",
+      filter: event.target.value
+    });
+    this.rowSelected = false;
+    this.gridApi.onFilterChanged();
+
+
+  }
+
+  selectByDrugName(event){
+    console.log(event.target.value);
+    var selctedRows=this.gridApi.deselectAll();
+    var roleFilterComponent = this.gridApi.getFilterInstance("drugName");
+    
+      roleFilterComponent.setModel({
+        type: "contains",
+        filter:event.target.value
+      });
+      this.rowSelected = false;
+      this.gridApi.onFilterChanged();
+    
+    
+  }
+
+
+  clearFilters(fil1,fil2){
+    fil1.value="";
+    fil2.value="";
+    
+
+    var selctedRows=this.gridApi.deselectAll();
+    var roleFilterComponent = this.gridApi.getFilterInstance("drugId");
+    
+      roleFilterComponent.setModel({
+        type: "contains",
+        filter:""
+      });
+     
+
+
+       selctedRows=this.gridApi.deselectAll();
+     roleFilterComponent = this.gridApi.getFilterInstance("drugName");
+    
+      roleFilterComponent.setModel({
+        type: "contains",
+        filter:""
+      });
+    
+
+      this.rowSelected = false;
+      this.gridApi.onFilterChanged();
+
   }
 
 
@@ -129,20 +191,20 @@ export class DrugListComponent implements OnInit {
 
         dialogRef.afterClosed().subscribe(result => {
 
-         console.log(result);
-         if(result.edited){
-            this.drugService.editDrug(data.drugId,data).subscribe(data=>{
+          console.log(result);
+          if (result.edited) {
+            this.drugService.editDrug(data.drugId, data).subscribe(data => {
               console.log(data);
               var selectedData = this.gridApi.getSelectedRows();
-              console.log(selectedData[0].drugId=result.data.drugId);
-              console.log(selectedData[0].drugName=result.data.drugName);
-              console.log(selectedData[0].dosage=result.data.dosage);
+              console.log(selectedData[0].drugId = result.data.drugId);
+              console.log(selectedData[0].drugName = result.data.drugName);
+              console.log(selectedData[0].dosage = result.data.dosage);
               var res = this.gridApi.updateRowData({ update: selectedData });
-              
-            },err=>{});
-         }else{
-        
-         }
+
+            }, err => { });
+          } else {
+
+          }
 
         });
 
@@ -163,17 +225,28 @@ export class DrugListComponent implements OnInit {
     });
   }
 
-  
 
-  updateItems(drugId,drugName,dosage) {
-    
+
+  updateItems(drugId, drugName, dosage) {
+
     var selectedData = this.gridApi.getSelectedRows();
     console.log("sathira");
-    console.log(selectedData[0].drugId=drugId);
-    console.log(selectedData[0].drugName=drugName);
-    console.log(selectedData[0].dosage=dosage);
+    console.log(selectedData[0].drugId = drugId);
+    console.log(selectedData[0].drugName = drugName);
+    console.log(selectedData[0].dosage = dosage);
     var res = this.gridApi.updateRowData({ update: selectedData });
-}
+  }
+
+
+  toggleSearch() {
+    if (!this.searchToggle) {
+      this.searchToggle = true;
+    }
+    else {
+      this.searchToggle = false;
+    }
+
+  }
 
 }
 

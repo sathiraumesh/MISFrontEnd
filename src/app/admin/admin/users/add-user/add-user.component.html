@@ -1,9 +1,26 @@
+
+<div fxLayout="row" fxLayoutAlign="center">
+
+  <mat-card fxFlex.lt-xs="80" fxFlex.gt-xs="50" class="search-bar">
+    <mat-card-header>
+      <h2 class="header-search-bar"> <strong> ADD USERS </strong> </h2>
+
+    </mat-card-header>
+
+    
+  </mat-card>
+
+
+
+</div>
+
+
 <div class="parent-container" fxLayout="row" fxLayoutAlign="center center">
 
   <div fxLayout="row" fxFlex.lt-xs="80" fxFlex.gt-xs="50" fxLayoutAlign="strech">
     <mat-card fxFlex="100" fxLayout="column" fxLayoutAlign="none strech">
       <mat-card-header>
-        Add user
+       
       </mat-card-header>
 
       <mat-card-content fxLayout="column" fxLayoutAlign="none strech">
@@ -54,8 +71,8 @@
           <mat-form-field>
             <mat-select #gender="ngModel" [(value)]="gender.selected" [(ngModel)]="user.gender" placeholder="Gender"
               name="gender" required>
-              <mat-option value="Male">Male </mat-option>
-              <mat-option value="Female">Female </mat-option>
+              <mat-option value="MALE">MALE </mat-option>
+              <mat-option value="FEMALE">FEMALE </mat-option>
             </mat-select>
             <mat-error *ngIf="gender.errors?.required">
               <strong> gender is required</strong>

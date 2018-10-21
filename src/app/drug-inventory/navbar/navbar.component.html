@@ -6,11 +6,13 @@
     <mat-menu #menu="matMenu" class="menu">
 
       <div>
-        <a [routerLink]="['/drugs/home']"><button mat-button>Home</button></a>
+        <a [routerLink]="['/drugs/home']"><button mat-button> <strong> HOME</strong> </button></a>
       </div>
 
       <div>
-        <a [routerLink]="['/drugs/register']"><button mat-button>Register</button></a>
+        <a [routerLink]="['/drugs/register']"><button mat-button> <strong>REGISTERY</strong></button></a>
+
+        <a [routerLink]="['/drugs/inventory']"><button mat-button> <strong>INVENTORY</strong></button></a>
       </div>
 
     </mat-menu>
@@ -19,9 +21,9 @@
 
 
   <div fxHide.xs="true">
-    <a [routerLink]="['/drugs/home']"><button mat-button> Home</button></a>
-    <a [routerLink]="['/drugs/register']"><button mat-button> Register</button></a>
-    <a [routerLink]="['/drugs/inventory']"><button mat-button> Inventory</button></a>
+    <a [routerLink]="['/drugs/home']"><button mat-button> <strong>HOME</strong></button></a>
+    <a [routerLink]="['/drugs/register']"><button mat-button> <strong>REGISTER</strong></button></a>
+    <a [routerLink]="['/drugs/inventory']"><button mat-button> <strong>INVENTORY</strong></button></a>
   
   </div>
 

@@ -29,9 +29,9 @@
 <div fxLayout="row" fxLayoutAlign="center center" *ngIf="searchToggle">
   <mat-card fxFlex="80" fxLayoutAlign="left center">
     <mat-card-header fxLayoutAlign="left center" fxLayoutGap="10px">
-        
+
       <mat-form-field>
-        <mat-select #fil0 placeholder="ROLE" >
+        <mat-select #fil0 placeholder="ROLE">
           <mat-option (click)="selectAll()" value="All">
             ALL
           </mat-option>
@@ -45,7 +45,7 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-     
+
 
 
 
@@ -63,7 +63,7 @@
 
 
       <button mat-stroked-button (click)="clearFilters(fil1,fil2,fil3,fil0)">Clear Filters</button>
-    
+
     </mat-card-header>
 
   </mat-card>
