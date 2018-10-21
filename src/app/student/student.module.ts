@@ -6,7 +6,9 @@ import { StudentRouteModule } from './student.module.routes';
 import { StudentProfileComponent } from './student/student-profile/student-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MaterialModules } from '../material';
+
 import { AddStudentComponent } from './student/add-student/add-student.component';
+
 
 @NgModule({
   imports: [

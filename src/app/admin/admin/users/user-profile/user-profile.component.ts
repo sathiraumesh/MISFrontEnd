@@ -82,4 +82,15 @@ export class UserComponent implements OnInit {
     });
   }
 
+
+  resetPassword(){
+    var data={
+      name:"sathira"
+    };
+    this.userService.resetUsersPassword(data,this.activeRoute.snapshot.params.id).subscribe(data=>{
+
+    },err=>{
+
+    });
+  }
 }

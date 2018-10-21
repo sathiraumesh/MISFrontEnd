@@ -23,7 +23,6 @@ import { ManageStudentMedicalHistoryComponent } from './admin/student/manage-stu
 
 
 
-
 @NgModule({
   imports: [
     CommonModule,

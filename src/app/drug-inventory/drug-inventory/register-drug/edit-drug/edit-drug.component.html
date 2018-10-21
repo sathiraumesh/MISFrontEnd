@@ -1,31 +1,17 @@
-
-<div fxLayout="row" fxLayoutAlign="center">
-
-  <mat-card fxFlex.lt-xs="80" fxFlex.gt-xs="50" class="search-bar">
-    <mat-card-header>
-      <h2 class="header-search-bar"> <strong> REGISTER DRUGS </strong> </h2>
-
-    </mat-card-header>
-
-    
-  </mat-card>
+ 
 
 
-
-</div>
-
-<div class="parent-container" fxLayout="row" fxLayoutAlign="center center">
-
-  <div fxLayout="row" fxFlex.lt-xs="80" fxFlex.gt-xs="50" fxLayoutAlign="strech">
     <mat-card fxFlex="100" fxLayout="column" fxLayoutAlign="none strech">
-      
+      <mat-card-header>
+        Drug Registry
+      </mat-card-header>
 
       <mat-card-content fxLayout="column" fxLayoutAlign="none strech">
 
-        <form #frm="ngForm" fxLayout="column" (ngSubmit)=registerDrug(frm)>
+        <form #frm="ngForm" fxLayout="column" >
 
           <mat-form-field class="example-full-width">
-            <input matInput #drId="ngModel" name="drugId" [(ngModel)]="drug.drugId" placeholder="Drug ID"
+            <input matInput #drId="ngModel" disabled name="drugId" [(ngModel)]="data.drugId" placeholder="Drug ID"
               required>
             <mat-error *ngIf="drId.errors?.required">
               <strong>Drug Id is required</strong>
@@ -33,7 +19,7 @@
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
-            <input matInput #drName="ngModel" name="drugName" [(ngModel)]="drug.drugName" placeholder="DrugName"
+            <input matInput #drName="ngModel" name="drugName" [(ngModel)]="data.drugName" placeholder="DrugName"
               required>
             <mat-error *ngIf="drName.errors?.required">
               <strong>Drug Name is required</strong>
@@ -41,7 +27,7 @@
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
-            <input matInput #drDosage="ngModel" name="drugDosage" [(ngModel)]="drug.dosage" placeholder="Dosage"
+            <input matInput #drDosage="ngModel" name="drugDosage" [(ngModel)]="data.dosage" placeholder="Dosage"
               required>
             <mat-error *ngIf="drName.errors?.required">
               <strong>Dosage</strong>
@@ -54,7 +40,8 @@
 
 
           <div fxLayout="row" class="add-button">
-            <button  mat-raised-button color="primary" fxFlex="40">Register</button>
+            <button  mat-raised-button color="primary" fxFlex="40" (click)="editDrug(frm,data)">Editr</button>
+            <button  mat-raised-button color="primary" fxFlex="40"  (click)="closeDialog()">Cancel</button>
           </div>
 
 
@@ -62,7 +49,9 @@
       </mat-card-content>
     </mat-card>
 
-  </div>
+  
 
 
   <!-- {{frm.value|json}} -->
+
+  

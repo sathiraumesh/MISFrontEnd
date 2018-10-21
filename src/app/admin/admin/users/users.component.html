@@ -1,13 +1,29 @@
 <div class="parent-container">
 
-  <mat-sidenav-container class="side-nav-container">
-    <mat-sidenav #sidenav mode="side" opened>
-      <div>
+
+    <mat-sidenav-container  class="side-nav-container">
+      
+      <mat-sidenav  #sidenav mode="side" opened>
         <div>
-          <a routerLink="/admin/users/home"> <button mat-raised-button color="primary" class="side-nav-button">List</button></a>
+          <div>
+           <a routerLink="/admin/users/home"> <button mat-raised-button color="primary" class="side-nav-button"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LIST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></button></a>
+          </div>
+          <div>
+              <a routerLink="/admin/users/adduser"><button mat-raised-button color="primary" class="side-nav-button"><strong>ADD USERS</strong></button></a>
+          </div>
         </div>
-        <div>
-          <a routerLink="/admin/users/adduser"><button mat-raised-button color="primary" class="side-nav-button">Add User</button></a>
+      </mat-sidenav>
+      <mat-sidenav-content  class="main-content">
+
+        
+
+      
+        <!-- <button mat-icon-button (click)="sidenav.toggle()" color="warn" class="material-icons"><mat-icon
+            aria-label="Example icon-button with a heart icon">list</mat-icon></button> -->
+  
+        <div class="content">
+          <router-outlet></router-outlet>
+
         </div>
       </div>
     </mat-sidenav>
