@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
 
-  selector: 'app-navbar',
+  selector: 'students-navbar',
 
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']

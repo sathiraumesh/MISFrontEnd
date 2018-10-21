@@ -8,6 +8,9 @@ import { UserComponent } from "./admin/users/user-profile/user-profile.component
 import { UserListComponent } from "./admin/users/user-list/user-list.component";
 import { HomeComponent } from "./admin/home/home.component";
 import { StudentComponent } from "./admin/student/student.component";
+import { AddStudentsComponent } from "./admin/student/add-students/add-students.component";
+import { StudentProfileComponent } from "./admin/student/student-profile/student-profile.component";
+import { ManageStudentMedicalHistoryComponent } from "./admin/student/manage-student-medical-history/manage-student-medical-history.component";
 
 
 const routes: Routes = [
@@ -25,7 +28,14 @@ const routes: Routes = [
                     { path: ":id", component: UserComponent }
                 ]
             },
-            { path: "students", component: StudentComponent }
+            {
+                path: "students", component: StudentComponent, children: [
+                    { path: "addstudent", component: AddStudentsComponent },
+                    { path: "studentprofile", component: StudentProfileComponent },
+                    { path: "managestudents", component: ManageStudentMedicalHistoryComponent },
+                    { path: ":id", component: StudentProfileComponent }
+                ]
+            }
         ]
     }
 ];

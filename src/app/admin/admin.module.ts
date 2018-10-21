@@ -16,6 +16,9 @@ import { HomeComponent } from './admin/home/home.component';
 import { PopupDialogComponent } from './popup-dialog/popup-dialog.component';
 import { EditUserComponent } from './admin/users/edit-user/edit-user.component';
 import { StudentComponent } from './admin/student/student.component';
+import { AddStudentsComponent } from './admin/student/add-students/add-students.component';
+import { StudentProfileComponent } from './admin/student/student-profile/student-profile.component';
+import { ManageStudentMedicalHistoryComponent } from './admin/student/manage-student-medical-history/manage-student-medical-history.component';
 
 
 
@@ -39,7 +42,10 @@ import { StudentComponent } from './admin/student/student.component';
     UserListComponent,
     PopupDialogComponent,
     EditUserComponent,
-    StudentComponent
+    StudentComponent,
+    AddStudentsComponent,
+    StudentProfileComponent,
+    ManageStudentMedicalHistoryComponent
 
 
   ],

@@ -3,16 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from "./authetication/login/login.component";
 import { DrugInventoryModule } from "./drug-inventory/drug-inventory.module";
 import { AdminAuthGaurd, DoctorAuthGaurd } from "./authetication/auth.gaurd";
-
-
+import { AdminModule } from "./admin/admin.module";
+import { StudentModule } from "./student/student.module";
 
 const routes: Routes = [
     { path: "", pathMatch: "full", redirectTo: "/login" },
     { path: "login", component: LoginComponent },
-    { path: "drugs", loadChildren: "./drug-inventory/drug-inventory.module#DrugInventoryModule"},
-    { path: "admin", loadChildren: "./admin/admin.module#AdminModule"},
-    { path: "students", loadChildren: "./student/student.module#StudentModule"},
-    { path: "**",component:LoginComponent}
+    { path: "drugs", loadChildren: "./drug-inventory/drug-inventory.module#DrugInventoryModule" },
+    { path: "admin", loadChildren: "./admin/admin.module#AdminModule" },
+    { path: "students", loadChildren: "./student/student.module#StudentModule" },
+    { path: "**", component: LoginComponent }
 
 ];
 

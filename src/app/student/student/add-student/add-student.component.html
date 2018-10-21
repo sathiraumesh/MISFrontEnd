@@ -1,0 +1,30 @@
+<!-- 
+<div class='exportExcel'>
+  <p>Save Excel File</p>
+  <button (click)="onClickMe($event)">Save Excel!</button>
+</div> -->
+
+<div class="parent-container" fxLayout="row" fxLayoutAlign="center center">
+  <div fxLayout="row" fxFlex.lt-xs="80" fxFlex.gt-xs="50" fxLayoutAlign="strech">
+    <mat-card fxFlex="100" fxLayout="column" fxLayoutAlign="none strech">
+      <mat-card-header>
+        Find user
+      </mat-card-header>
+
+      <!-- <mat-card-content fxLayout="column" fxLayoutAlign="none strech">
+
+        <form #frm="ngForm" fxLayout="column" (ngSubmit)=findStudent(frm)>
+
+          <mat-form-field class="example-full-width">
+            <input matInput #stdId="ngModel" name="StudentId" [(ngModel)]="user.username" placeholder="Student Id" required>
+            <mat-error *ngIf="usName.errors?.required">
+              <strong>user name required</strong>
+            </mat-error>
+          </mat-form-field>
+        </form> -->
+      <div fxLayout="row" class="add-button">
+        <button mat-raised-button color="primary" fxFlex="40">Find User</button>
+      </div>
+    </mat-card>
+  </div>
+</div>
