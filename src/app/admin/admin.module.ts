@@ -19,6 +19,7 @@ import { StudentComponent } from './admin/student/student.component';
 import { AddStudentsComponent } from './admin/student/add-students/add-students.component';
 import { StudentProfileComponent } from './admin/student/student-profile/student-profile.component';
 import { ManageStudentMedicalHistoryComponent } from './admin/student/manage-student-medical-history/manage-student-medical-history.component';
+import { StudentListComponent } from './admin/student/student-list/student-list.component';
 
 
 
@@ -46,7 +47,8 @@ import { ManageStudentMedicalHistoryComponent } from './admin/student/manage-stu
     StudentComponent,
     AddStudentsComponent,
     StudentProfileComponent,
-    ManageStudentMedicalHistoryComponent
+    ManageStudentMedicalHistoryComponent,
+    StudentListComponent
 
 
   ],

@@ -11,6 +11,7 @@ import { StudentComponent } from "./admin/student/student.component";
 import { AddStudentsComponent } from "./admin/student/add-students/add-students.component";
 import { StudentProfileComponent } from "./admin/student/student-profile/student-profile.component";
 import { ManageStudentMedicalHistoryComponent } from "./admin/student/manage-student-medical-history/manage-student-medical-history.component";
+import { StudentListComponent } from "./admin/student/student-list/student-list.component";
 
 
 const routes: Routes = [
@@ -30,8 +31,9 @@ const routes: Routes = [
             },
             {
                 path: "students", component: StudentComponent, children: [
+                    { path: "", pathMatch: "full", redirectTo: "home" },
+                    { path: "home", component: StudentListComponent },
                     { path: "addstudent", component: AddStudentsComponent },
-                    { path: "studentprofile", component: StudentProfileComponent },
                     { path: "managestudents", component: ManageStudentMedicalHistoryComponent },
                     { path: ":id", component: StudentProfileComponent }
                 ]
