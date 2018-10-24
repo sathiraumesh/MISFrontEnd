@@ -13,6 +13,9 @@
         <a [routerLink]="['/admin/users']"><button mat-button> Users</button></a>
       </div>
 
+      <div>
+        <a [routerLink]="['/admin/students']"><button mat-button> Students</button></a>
+      </div>
     </mat-menu>
   </div>
 
@@ -21,7 +24,7 @@
   <div fxHide.xs="true">
     <a [routerLink]="['/admin/home']"><button mat-button> Home</button></a>
     <a [routerLink]="['/admin/users']"><button mat-button> Users</button></a>
-    <button mat-button>Patients</button>
+    <a [routerLink]="['/admin/students']"><button mat-button> Students</button></a>
   </div>
 
 </mat-toolbar>
