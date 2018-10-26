@@ -1,4 +1,9 @@
-<mat-tab-group>
+
+
+<stock-navbar></stock-navbar>
+<router-outlet></router-outlet>
+
+<!-- <mat-tab-group>
   <mat-tab label="STATS"> 
       <div class="spacer"></div>
       <div fxLayout="row" fxLayoutAlign="center">
@@ -9,8 +14,8 @@
           </ag-grid-angular>
         
           <div>
-            <!-- {{selectedName|json}} -->
-            <!-- {{userId}} -->
+            {{selectedName|json}}
+            {{userId}}
           </div>
         </div>  
   </mat-tab>
@@ -19,8 +24,8 @@
   <mat-tab label="MANAGE STOCKS"> 
       <mat-card>
         <mat-card-content fxLayout="row">
-          <a [routerLink]="['/drugs/inventory/stock/managestocks']"><button mat-raised-button>CREATE STOCKS</button></a>
          
+            <drug-inventory-create-stock></drug-inventory-create-stock>
            
         </mat-card-content>
       </mat-card> 
@@ -32,4 +37,4 @@
     </mat-card>
   </mat-tab>
   <mat-tab label="Third"> Content 3 </mat-tab>
-</mat-tab-group>
+</mat-tab-group> -->

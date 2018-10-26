@@ -1,16 +1,21 @@
-<mat-card>
-  <mat-card-header>NEW STOCK </mat-card-header>
+<h2>NEW STOCK </h2>
+<div fxLayout="row" fxLayoutAlign="center">
+
+  <mat-card-header>
+  
+  </mat-card-header>
+
   <mat-card-content>
     <div fxLayout="row">
       <div>
         <form #frm="ngForm" class="example-form">
           <mat-form-field class="example-full-width">
-            <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl"
+            <input type="text" placeholder="select drug" aria-label="Number" matInput [formControl]="myControl"
               [matAutocomplete]="auto">
-              <!-- (focus)="clearBox($event)" -->
+            <!-- (focus)="clearBox($event)" -->
             <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-              <mat-option *ngFor="let option of filteredOptions | async" [value]="option"  (click)="getselectedOption(option)" > 
-                {{option.drugName}}    {{option.dosage}}
+              <mat-option *ngFor="let option of filteredOptions | async" [value]="option" (click)="getselectedOption(option)">
+                {{option.drugName}} {{option.dosage}}
               </mat-option>
             </mat-autocomplete>
           </mat-form-field>
@@ -24,7 +29,7 @@
       </div>
     </div>
 
-    
+
 
 
 
@@ -33,10 +38,10 @@
       <div formArrayName="items">
         <div *ngFor="let item of items.controls; let i=index" fxLayout="row" [formGroupName]="i">
 
-          
+
           <div>
             <mat-form-field>
-              <input matInput type="text" formControlName="drugName" >
+              <input matInput type="text" formControlName="drugShowName">
             </mat-form-field>
 
 
@@ -45,13 +50,13 @@
 
           <div>
             <mat-form-field>
-              <input matInput type="text" formControlName="dosage">
+              <input matInput type="text" formControlName="dosageShow">
             </mat-form-field>
           </div>
 
           <div>
             <mat-form-field>
-              <input matInput type="text"  required formControlName="quantity">
+              <input matInput type="text" required formControlName="quantity">
             </mat-form-field>
           </div>
 
@@ -62,13 +67,14 @@
       </div>
     </form>
 
-
+    <button mat-raised-button color="warn" (click)="saveStock()">Save</button>
+    <button mat-raised-button color="warn" (click)="cancelStock()">Cancel</button>
 
   </mat-card-content>
 
 
-  <button mat-raised-button color="warn" (click)="saveStock()">Save</button>
-  <button mat-raised-button color="warn" >Cancel</button>
-  {{stockForm.value|json}}
 
-</mat-card>
+  <!-- {{stockForm.value|json}} -->
+
+</div>
+

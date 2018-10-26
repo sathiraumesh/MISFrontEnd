@@ -24,5 +24,8 @@ export class DrugInventoryService {
   editDrug(id,data){
     return this.http.put<any>("api/drugs/"+id,data);
   }
+  saveDrugStock(stock){
+    return this.http.post<any>("api/drugs/stocks",stock);
+  }
   
 }

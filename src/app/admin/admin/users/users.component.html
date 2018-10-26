@@ -1,6 +1,5 @@
 <div class="parent-container">
 
-
     <mat-sidenav-container  class="side-nav-container">
       
       <mat-sidenav  #sidenav mode="side" opened>
@@ -23,18 +22,11 @@
   
         <div class="content">
           <router-outlet></router-outlet>
-
         </div>
-      </div>
-    </mat-sidenav>
-    <mat-sidenav-content class="main-content"><button mat-icon-button (click)="sidenav.toggle()" color="warn" class="material-icons"><mat-icon
-          aria-label="Example icon-button with a heart icon">list</mat-icon></button>
-
-      <div>
-        <router-outlet></router-outlet>
-      </div>
-    </mat-sidenav-content>
-
-  </mat-sidenav-container>
-
-</div>
+      </mat-sidenav-content>
+  
+  
+  
+    </mat-sidenav-container>
+  
+  </div>
