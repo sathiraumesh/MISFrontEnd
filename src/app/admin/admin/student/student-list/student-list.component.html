@@ -4,10 +4,15 @@
   </div>
 
   <div fxLayout=row>
-    <div>
+    <div class="example-full-width">
+
+      <mat-form-field>
+        <input matInput placeholder="EP Number">
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)=searchStudent()>Search</button>
 
     </div>
-    <button><mat-icon>search</mat-icon></button>
+
   </div>
 </div>
 <div fxLayout=row fxLayoutAlign="center">
