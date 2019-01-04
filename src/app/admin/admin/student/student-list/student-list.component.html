@@ -1,3 +1,24 @@
-<div>
-  Student List
+<div fxLayout=row>
+  <div *ngIf="rowSelected">
+    <button mat-raised-button (click)="goToPath()">View Details</button>
+  </div>
+
+  <div fxLayout=row>
+    <div class="example-full-width">
+
+      <mat-form-field>
+        <input matInput placeholder="EP Number">
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)=searchStudent()>Search</button>
+
+    </div>
+
+  </div>
+</div>
+<div fxLayout=row fxLayoutAlign="center">
+  <ag-grid-angular fxFlex="80" style="height: 50vh;" class="ag-theme-balham" [rowData]="rowData" [columnDefs]="columnDefs"
+    [enableSorting]="true" [enableFilter]="true" rowSelection="single" [animateRows]="true" (selectionChanged)="onRowSelectedChange($event)"
+    (gridReady)="onGridReady($event)">
+
+  </ag-grid-angular>
 </div>
