@@ -16,7 +16,11 @@ import { AddDrugsComponent } from './drug-inventory/inventory/add-drugs/add-drug
 import {DrugListComponent as InventoryDrugListComponent} from "./drug-inventory/inventory/drug-list/drug-list.component";
 import { StockComponent } from './drug-inventory/inventory/stock/stock.component';
 import { CreateStockComponent } from './drug-inventory/inventory/stock/create-stock/create-stock.component';
-import { SavedStockComponent } from './drug-inventory/inventory/stock/saved-stock/saved-stock.component'
+import { SavedStockComponent } from './drug-inventory/inventory/stock/saved-stock/saved-stock.component';
+import { PopupDialogComponent } from './popup-dialog/popup-dialog.component';
+import { EditDrugComponent } from './drug-inventory/register-drug/edit-drug/edit-drug.component';
+import { StockNavbarComponent } from './drug-inventory/inventory/stock/stock-navbar/stock-navbar.component';
+import { StatsComponent } from './drug-inventory/inventory/stock/stats/stats.component'
 
 
 
@@ -43,8 +47,13 @@ import { SavedStockComponent } from './drug-inventory/inventory/stock/saved-stoc
     InventoryDrugListComponent,
     StockComponent,
     CreateStockComponent,
-    SavedStockComponent
+    SavedStockComponent,
+    PopupDialogComponent,
+    EditDrugComponent,
+    StockNavbarComponent,
+    StatsComponent
   ],
+  entryComponents: [PopupDialogComponent,EditDrugComponent],
   exports:[]
 })
 export class DrugInventoryModule { }

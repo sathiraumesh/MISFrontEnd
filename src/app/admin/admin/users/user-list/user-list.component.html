@@ -1,37 +1,94 @@
 <div fxLayout=row>
-  <div *ngIf="rowSelected">
-    <button mat-raised-button (click)="goToPath()">View Details</button>
-  </div>
 
   <div FxLayout=row>
     <div>
 
     </div>
-    <button mat-raised-button [matMenuTriggerFor]="menu">
-      {{selectedRole}}
-    </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="selectDoctors()">
-        <span>Doctors</span>
-      </button>
-      <button mat-menu-item (click)="selectNurses()">
-        <span>Nurse</span>
-      </button>
-      <button mat-menu-item (click)="selectAll()">
-        <span>All</span>
-      </button>
-    </mat-menu>
+
 
 
   </div>
 </div>
+<div fxLayout="row" fxLayoutAlign="center">
+
+  <mat-card fxLayout="column" fxFlex="80" class="search-bar">
+    <mat-card-header>
+      <h2 class="header-search-bar"> <strong> SYSTEM USERS </strong> </h2>
+
+    </mat-card-header>
+
+    <mat-card-header (click)=toggleSearch()>
+      search
+    </mat-card-header>
+  </mat-card>
+
+
+
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center center" *ngIf="searchToggle">
+  <mat-card fxFlex="80" fxLayoutAlign="left center">
+    <mat-card-header fxLayoutAlign="left center" fxLayoutGap="10px">
+
+      <mat-form-field>
+        <mat-select #fil0 placeholder="ROLE">
+          <mat-option (click)="selectAll()" value="All">
+            ALL
+          </mat-option>
+
+          <mat-option (click)="selectDoctors()" value="Doctors">
+            DOCTORS
+          </mat-option>
+
+          <mat-option (click)="selectNurses()" value="Nurse">
+            NURSE
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+
+
+      <mat-form-field class="example-full-width">
+        <input #fil1 matInput placeholder="nic" (keyup)="selectByNIC($event)" name="nic">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input #fil2 matInput (keyup)="selectByFirstName($event)" placeholder="first name">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input #fil3 matInput placeholder="last name" (keyup)="selectByLastName($event)">
+      </mat-form-field>
+
+
+      <button mat-stroked-button (click)="clearFilters(fil1,fil2,fil3,fil0)">Clear Filters</button>
+
+    </mat-card-header>
+
+  </mat-card>
+
+</div>
+
 
 <div fxLayout="row" fxLayoutAlign="center">
-  <ag-grid-angular fxFlex="80" style="height: 50vh;" class="ag-theme-balham" [rowData]="rowData" [columnDefs]="columnDefs"
-    [enableSorting]="true" [enableFilter]="true" rowSelection="single" [animateRows]="true" (selectionChanged)="onRowSelectedChange($event)"
-    (gridReady)="onGridReady($event)">
+  <mat-card fxFlex="80">
+    <mat-card-header>
 
-  </ag-grid-angular>
+    </mat-card-header>
+
+    <mat-card-content>
+      <ag-grid-angular fxFlex="100" style="height: 30vh;" class="ag-theme-balham" [rowData]="rowData" [columnDefs]="columnDefs"
+        [enableSorting]="true" [enableFilter]="true" rowSelection="single" [animateRows]="true" (selectionChanged)="onRowSelectedChange($event)"
+        (gridReady)="onGridReady($event)">
+
+      </ag-grid-angular>
+    </mat-card-content>
+    <div *ngIf="rowSelected">
+      <button class="view-details-button" mat-raised-button (click)="goToPath()">View Details</button>
+    </div>
+  </mat-card>
+
 
   <div>
     <!-- {{selectedName|json}} -->

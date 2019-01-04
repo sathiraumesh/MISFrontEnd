@@ -1,0 +1,33 @@
+<mat-toolbar  class="cus-nav-bar">
+    <!-- <div>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" class="menu">
+  
+        <div>
+          <a [routerLink]="['/drugs/home']"><button mat-button> <strong> STATS</strong> </button></a>
+        </div>
+  
+        <div>
+          <a [routerLink]="['/drugs/register']"><button mat-button> <strong>MANAGE STOCKS</strong></button></a>
+  
+          <a [routerLink]="['/drugs/inventory']"><button mat-button> <strong>INVENTORY</strong></button></a>
+        </div>
+  
+      </mat-menu>
+    </div> -->
+  
+  
+  
+    <div >
+      <a [routerLink]="['/drugs/inventory/stock/stats']"><button mat-button> <strong>STATS</strong></button></a>
+      <a [routerLink]="['/drugs/inventory/stock/managestocks']"><button mat-button> <strong>MANAGE STOCKS</strong></button></a>
+      <a [routerLink]="['/drugs/inventory/stock/managestocks']"><button mat-button> <strong>INVENTORY</strong></button></a>
+    
+    </div>
+  
+  </mat-toolbar>
+  
+  
+  

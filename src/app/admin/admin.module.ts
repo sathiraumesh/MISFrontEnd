@@ -24,7 +24,6 @@ import { StudentListComponent } from './admin/student/student-list/student-list.
 
 
 
-
 @NgModule({
   imports: [
     CommonModule,

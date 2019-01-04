@@ -12,6 +12,7 @@ import { DrugListComponent as InventoryDrugListComponent } from "./drug-inventor
 import { StockComponent } from "./drug-inventory/inventory/stock/stock.component";
 import { CreateStockComponent } from "./drug-inventory/inventory/stock/create-stock/create-stock.component";
 import { SavedStockComponent } from "./drug-inventory/inventory/stock/saved-stock/saved-stock.component";
+import { StatsComponent } from "./drug-inventory/inventory/stock/stats/stats.component";
 
 
 const routes: Routes = [
@@ -27,7 +28,7 @@ const routes: Routes = [
                     {
                         path: "stock", component: StockComponent, children: [
                             { path: "managestocks", component: CreateStockComponent },
-                            { path: "savedstocks", component: SavedStockComponent },
+                            { path: "stats", component: StatsComponent },
                         ]
                     }
                 ]
