@@ -39,9 +39,12 @@
           </mat-form-field>
 
           <mat-form-field>
-            <mat-select #gender="ngModel" [(value)]="gender.selected" [(ngModel)]="data.gender" placeholder="Gender" name="gender" required>
-              <mat-option value="Male">Male </mat-option>
-              <mat-option value="Female">Female </mat-option>
+
+            <mat-select #gender="ngModel" [(value)]="gender.selected" [(ngModel)]="data.gender" placeholder="Gender"
+              name="gender" required>
+              <mat-option value="MALE">MALE </mat-option>
+              <mat-option value="FEMALE">FEMALE </mat-option>
+
             </mat-select>
             <mat-error *ngIf="gender.errors?.required">
               <strong> gender is required</strong>
@@ -52,9 +55,9 @@
 
           <mat-form-field>
             <mat-select #role="ngModel" [(ngModel)]="data.role" name="role" placeholder="Role" required>
-              <mat-option value="Admin">Admin</mat-option>
-              <mat-option value=Doctor>Doctor </mat-option>
-              <mat-option value=Nurse>nurse </mat-option>
+              <mat-option value="ADMIN">ADMIN</mat-option>
+              <mat-option value=DOCTOR>DOCTOR </mat-option>
+              <mat-option value=NURSE>NURSE </mat-option>
             </mat-select>
             <mat-error *ngIf="role.errors?.required">
               <strong> role is required</strong>

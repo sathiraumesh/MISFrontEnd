@@ -2,8 +2,97 @@
 
 
 
+<div fxLayout="row"  class="parent-component" fxLayoutGap="30px" fxLayoutAlign="cente center">
+    <div>
+
+        <mat-card>
+            <mat-card-header>
+                System Users
+            </mat-card-header>
+            <mat-card-content>
+                    <table >
+                            <tr>
+                              <th ></th>
+                              <th >ADMINS</th>
+                              <th >DOCTORS</th>
+                              <th>NURSES</th>
+                            
+                            </tr>
+                          
+                            <tr *ngFor="let dessert of desserts">
+                              <td>{{dessert.name}}</td>
+                              <td>{{dessert.calories}}</td> 
+                              <td>{{dessert.fat}}</td>
+                              <td>{{dessert.carbs}}</td>
+                             
+                            </tr>
+                          </table>
+            </mat-card-content>
+        </mat-card>
+           
+    </div>
 
 
+    <div>
+
+            <mat-card>
+                <mat-card-header>
+                    Patients
+                </mat-card-header>
+                <mat-card-content>
+                        <table >
+                                <tr>
+                                  <th ></th>
+                                  <th >ADMINS</th>
+                                  <th >DOCTORS</th>
+                                  <th>NURSES</th>
+                                
+                                </tr>
+                              
+                                <tr *ngFor="let dessert of desserts">
+                                  <td>{{dessert.name}}</td>
+                                  <td>{{dessert.calories}}</td> 
+                                  <td>{{dessert.fat}}</td>
+                                  <td>{{dessert.carbs}}</td>
+                                 
+                                </tr>
+                              </table>
+                </mat-card-content>
+            </mat-card>
+               
+        </div>
+</div>
+
+
+<div fxLayout="row"  class="parent-component" fxLayoutGap="30px" fxLayoutAlign="center top">
+        <div>
+    
+            <mat-card>
+                <mat-card-header>
+                    System Users
+                </mat-card-header>
+                <mat-card-content>
+                       
+                </mat-card-content>
+            </mat-card>
+               
+        </div>
+    
+    
+        <div>
+    
+                <mat-card>
+                    <mat-card-header>
+                        Patients
+                    </mat-card-header>
+                    <mat-card-content>
+                           
+                    </mat-card-content>
+                </mat-card>
+                   
+            </div>
+    </div>
+    
 
 
 

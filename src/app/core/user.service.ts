@@ -37,5 +37,9 @@ export class UserService {
   editUser(userId,data){
     return this.http.put<any>("api/users/"+userId,data);
   }
+
+  resetUsersPassword(data,userId){
+    return this.http.put<any>("api/users/reset/ "+userId,data);
+  }
   
 }

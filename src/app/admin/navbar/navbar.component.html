@@ -6,15 +6,17 @@
     <mat-menu #menu="matMenu" class="menu">
 
       <div>
-        <a [routerLink]="['/admin/home']"><button mat-button> Home</button></a>
+        <a [routerLink]="['/admin/home']"><button mat-button>  <strong>HOME</strong></button></a>
       </div>
 
       <div>
-        <a [routerLink]="['/admin/users']"><button mat-button> Users</button></a>
+        <a [routerLink]="['/admin/users']"><button mat-button> <strong>USERS</strong></button></a>
       </div>
 
       <div>
-        <a [routerLink]="['/admin/students']"><button mat-button> Students</button></a>
+
+        <a [routerLink="['/admin/student']" ]><button mat-button>Students</button></a>
+
       </div>
     </mat-menu>
   </div>
@@ -22,9 +24,13 @@
 
 
   <div fxHide.xs="true">
-    <a [routerLink]="['/admin/home']"><button mat-button> Home</button></a>
-    <a [routerLink]="['/admin/users']"><button mat-button> Users</button></a>
-    <a [routerLink]="['/admin/students']"><button mat-button> Students</button></a>
+
+
+    <a [routerLink]="['/admin/home']"><button mat-button> <strong>HOME</strong></button></a>
+    <a [routerLink]="['/admin/users']"><button mat-button><strong>USERS</strong></button></a>
+    <a [routerLink]="['/admin/students']"><button mat-button><strong>STUDENTS</strong></button></a>
+
+
   </div>
 
 </mat-toolbar>

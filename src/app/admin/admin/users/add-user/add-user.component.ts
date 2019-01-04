@@ -41,7 +41,9 @@ export class AddUserComponent implements OnInit {
   //   // }// end of getUsers();
 
   addUser(form: any) {
+    
     if(!form.invalid){
+      this.formatInputs();
       this.userService.addUser(this.user).subscribe(data=>{
         console.log(data);
   
@@ -49,7 +51,20 @@ export class AddUserComponent implements OnInit {
         console.log(err);
       });
     }
+    this.formatInputs();
+
     
   }
 
+  formatInputs(){
+    this.user.username=this.user.username.toUpperCase();
+    this.user.firstName=this.user.firstName.toUpperCase();
+    this.user.lastName=this.user.lastName.toUpperCase();
+    console.log(String(this.user.dateOfBirth));
+    
+  }
+
+
+
+  
 }
