@@ -33,8 +33,6 @@ export class DrugListComponent implements OnInit {
       { headerName: 'Quantity', field: 'quantity' }
     ];
 
-
-
   }
 
 
@@ -42,7 +40,6 @@ export class DrugListComponent implements OnInit {
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
     this.getDrugList();
-
 
   }
 
@@ -89,7 +86,6 @@ export class DrugListComponent implements OnInit {
     this.rowSelected = false;
     this.gridApi.onFilterChanged();
 
-
   }
 
   selectByDrugName(event) {
@@ -104,14 +100,12 @@ export class DrugListComponent implements OnInit {
     this.rowSelected = false;
     this.gridApi.onFilterChanged();
 
-
   }
 
 
   clearFilters(fil1, fil2) {
     fil1.value = "";
     fil2.value = "";
-
 
     var selctedRows = this.gridApi.deselectAll();
     var roleFilterComponent = this.gridApi.getFilterInstance("drugId");
@@ -120,7 +114,6 @@ export class DrugListComponent implements OnInit {
       type: "contains",
       filter: ""
     });
-
 
 
     selctedRows = this.gridApi.deselectAll();
@@ -137,22 +130,13 @@ export class DrugListComponent implements OnInit {
 
   }
 
-
-
-
-
   // function for opening and closing the popup dialog 
-
-
-
-
 
   deselectItem() {
     this.gridApi.forEachNode(function (node) {
       node.setSelected(false);
     });
   }
-
 
 
   updateItems(drugId, drugName, dosage) {

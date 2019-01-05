@@ -20,21 +20,24 @@
 
 
           <mat-form-field class="example-full-width">
-            <input matInput #stdName="ngModel" name="studentName" [(ngModel)]="student.studentName" placeholder="Student Name" required>
+            <input matInput #stdName="ngModel" name="studentName" [(ngModel)]="student.studentName" placeholder="Student Name"
+              required>
 
             <mat-error *ngIf="stdName.errors?.required"><strong>Student Name is required.</strong>
             </mat-error>
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
-            <input matInput #stdDOB="ngModel" name="studentDOB" [(ngModel)]="student.studentDOB" placeholder="Student DOB" required>
+            <input matInput #stdDOB="ngModel" name="studentDOB" [(ngModel)]="student.studentDOB" placeholder="Student DOB"
+              required>
 
             <mat-error *ngIf="stdDOB.errors?.required"><strong>Date of Birth is required.</strong>
             </mat-error>
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
-            <input matInput #stdAge="ngModel" name="studentAge" [(ngModel)]="student.studentAge" placeholder="Student Age" required>
+            <input matInput #stdAge="ngModel" name="studentAge" [(ngModel)]="student.studentAge" placeholder="Student Age"
+              required>
 
             <mat-error *ngIf="stdAge.errors?.required"><strong>Student age is required.</strong>
             </mat-error>
@@ -42,7 +45,7 @@
 
           <div fxLayout="row" class="edit-button" fxLayoutGap="20px">
 
-            <button mat-raised-button color="primary" (click)="editUser(frm,data)">Save</button>
+            <button mat-raised-button color="primary" (click)="editStudent(frm,data)">Save</button>
             <button mat-raised-button color="warn" (click)="closeDialog()">Cancel</button>
           </div>
         </form>

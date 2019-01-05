@@ -7,7 +7,7 @@
     <mat-card-content>
       <mat-list>
         <mat-list-item>
-          Student Index Number{{student.studentIndexNumber}}
+          Student Registration Number{{student.studentRegistrationNumber}}
         </mat-list-item>
       </mat-list>
       <mat-list>
@@ -27,4 +27,19 @@
       </mat-list>
     </mat-card-content>
   </mat-card>
+
+  <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="20px" fxFlex="100">
+
+    <!-- <div>
+      <button mat-raised-button color="warn" (click)="resetPassword()">Reset Password</button>
+    </div> -->
+    <div>
+      <button mat-raised-button color="basic" (click)=editOpenDialog()>Edit</button>
+    </div>
+    <div>
+      <button mat-raised-button color="warn" (click)=openDialog()>Delete</button>
+    </div>
+
+  </div>
+
 </div>

@@ -3,7 +3,6 @@ export class UserCredentials {
     constructor(public username: string, public password: string, public role: String) {
 
     }
-
 }
 
 export class User {
@@ -15,5 +14,5 @@ export class Drug {
 }
 
 export class Students {
-    constructor(public studentIndexNumber: string, public studentName: String, public studentDOB: string, public studentAge: String) { }
+    constructor(public studentRegistrationNumber: string, public studentName: String, public studentDOB: string, public studentAge: String) { }
 }

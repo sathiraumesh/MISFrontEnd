@@ -37,7 +37,7 @@ export class UserListComponent implements OnInit {
   }
 
 
-  
+
   private columnDefs;
   private rowData: any;
   private gridApi;
@@ -46,8 +46,8 @@ export class UserListComponent implements OnInit {
   private userId;
   private rowSelected: boolean = false;
   private selectedRole = "ALL";
-  private searchToggle=false;
-  private searchNic=null;
+  private searchToggle = false;
+  private searchNic = null;
 
 
 
@@ -72,7 +72,7 @@ export class UserListComponent implements OnInit {
 
 
   selectDoctors() {
-    var selctedRows=this.gridApi.deselectAll();
+    var selctedRows = this.gridApi.deselectAll();
     var roleFilterComponent = this.gridApi.getFilterInstance("role");
     roleFilterComponent.setModel({
       type: "equals",
@@ -83,53 +83,53 @@ export class UserListComponent implements OnInit {
     this.gridApi.onFilterChanged();
   }
 
-  selectByNIC(event){
+  selectByNIC(event) {
     console.log(event.target.value);
-    var selctedRows=this.gridApi.deselectAll();
+    var selctedRows = this.gridApi.deselectAll();
     var roleFilterComponent = this.gridApi.getFilterInstance("nic");
-    
-      roleFilterComponent.setModel({
-        type: "contains",
-        filter:event.target.value
-      });
-      this.rowSelected = false;
-      this.gridApi.onFilterChanged();
-    
-    
+
+    roleFilterComponent.setModel({
+      type: "contains",
+      filter: event.target.value
+    });
+    this.rowSelected = false;
+    this.gridApi.onFilterChanged();
+
+
   }
 
-  selectByFirstName(event){
+  selectByFirstName(event) {
     console.log(event.target.value);
-    var selctedRows=this.gridApi.deselectAll();
+    var selctedRows = this.gridApi.deselectAll();
     var roleFilterComponent = this.gridApi.getFilterInstance("firstName");
-    
-      roleFilterComponent.setModel({
-        type: "contains",
-        filter:event.target.value
-      });
-      this.rowSelected = false;
-      this.gridApi.onFilterChanged();
-    
-    
+
+    roleFilterComponent.setModel({
+      type: "contains",
+      filter: event.target.value
+    });
+    this.rowSelected = false;
+    this.gridApi.onFilterChanged();
+
+
   }
 
-  selectByLastName(event){
+  selectByLastName(event) {
     console.log(event.target.value);
-    var selctedRows=this.gridApi.deselectAll();
+    var selctedRows = this.gridApi.deselectAll();
     var roleFilterComponent = this.gridApi.getFilterInstance("lastName");
-    
-      roleFilterComponent.setModel({
-        type: "contains",
-        filter:event.target.value
-      });
-      this.rowSelected = false;
-      this.gridApi.onFilterChanged();
-    
-    
+
+    roleFilterComponent.setModel({
+      type: "contains",
+      filter: event.target.value
+    });
+    this.rowSelected = false;
+    this.gridApi.onFilterChanged();
+
+
   }
 
   selectAll() {
-    var selctedRows=this.gridApi.deselectAll();
+    var selctedRows = this.gridApi.deselectAll();
     var roleFilterComponent = this.gridApi.getFilterInstance("role");
     roleFilterComponent.setModel(null);
     this.gridApi.onFilterChanged();
@@ -138,7 +138,7 @@ export class UserListComponent implements OnInit {
 
 
   selectNurses() {
-     var selctedRows=this.gridApi.deselectAll();
+    var selctedRows = this.gridApi.deselectAll();
     var roleFilterComponent = this.gridApi.getFilterInstance("role");
     roleFilterComponent.setModel({
       type: "equals",
@@ -150,56 +150,56 @@ export class UserListComponent implements OnInit {
   }
 
 
-  clearFilters(fil1,fil2,fil3,fil0){
-    fil0.value="ALL";
-    fil1.value="";
-    fil2.value="";
-    fil3.value=""
+  clearFilters(fil1, fil2, fil3, fil0) {
+    fil0.value = "ALL";
+    fil1.value = "";
+    fil2.value = "";
+    fil3.value = ""
     this.selectAll();
 
-    var selctedRows=this.gridApi.deselectAll();
+    var selctedRows = this.gridApi.deselectAll();
     var roleFilterComponent = this.gridApi.getFilterInstance("lastName");
-    
-      roleFilterComponent.setModel({
-        type: "contains",
-        filter:""
-      });
-     
+
+    roleFilterComponent.setModel({
+      type: "contains",
+      filter: ""
+    });
 
 
-       selctedRows=this.gridApi.deselectAll();
-     roleFilterComponent = this.gridApi.getFilterInstance("firstName");
-    
-      roleFilterComponent.setModel({
-        type: "contains",
-        filter:""
-      });
-    
+
+    selctedRows = this.gridApi.deselectAll();
+    roleFilterComponent = this.gridApi.getFilterInstance("firstName");
+
+    roleFilterComponent.setModel({
+      type: "contains",
+      filter: ""
+    });
 
 
-       selctedRows=this.gridApi.deselectAll();
-     roleFilterComponent = this.gridApi.getFilterInstance("nic");
-    
-      roleFilterComponent.setModel({
-        type: "contains",
-        filter:""
-      });
 
-      this.rowSelected = false;
-      this.gridApi.onFilterChanged();
+    selctedRows = this.gridApi.deselectAll();
+    roleFilterComponent = this.gridApi.getFilterInstance("nic");
+
+    roleFilterComponent.setModel({
+      type: "contains",
+      filter: ""
+    });
+
+    this.rowSelected = false;
+    this.gridApi.onFilterChanged();
 
   }
 
-  toggleSearch(){
-    if(!this.searchToggle){
-      this.searchToggle=true;
+  toggleSearch() {
+    if (!this.searchToggle) {
+      this.searchToggle = true;
     }
-    else{
-      this.searchToggle= false;
+    else {
+      this.searchToggle = false;
     }
-   
+
   }
 
-  
-  
+
+
 }

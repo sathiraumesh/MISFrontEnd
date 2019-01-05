@@ -12,7 +12,7 @@
         <form #frm="ngForm" fxLayout="column" (ngSubmit)=addStudent(frm)>
 
           <mat-form-field class="example-full-width">
-            <input matInput #stdIndex="ngModel" name="studentId" [(ngModel)]="student.studentIndexNumber" placeholder="Student Index Number"
+            <input matInput #stdIndex="ngModel" name="studentId" [(ngModel)]="student.studentRegistrationNumber" placeholder="Student Registration Number"
               required>
 
             <mat-error *ngIf="stdIndex.errors?.required"><strong>Student Index Number is required.</strong>
@@ -42,6 +42,8 @@
             <mat-error *ngIf="stdAge.errors?.required"><strong>Student age is required.</strong>
             </mat-error>
           </mat-form-field>
+
+          
 
           <div fxLayout="row" class="add-button">
             <button mat-raised-button color="primary" fxFlex="40">Add Students</button>

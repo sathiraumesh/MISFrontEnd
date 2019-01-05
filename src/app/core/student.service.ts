@@ -12,4 +12,19 @@ export class StudentService {
     return this.http.post<any>("/api/student/", student);
   }
 
+  getStudentList() {
+    return this.http.get<any>("/api/student/");
+  }
+
+  getStudent(studentId) {
+    return this.http.get<any>("/api/student/" + studentId);
+  }
+
+  deleteStudent(studentId) {
+    return this.http.delete<any>("/api/student/" + studentId);
+  }
+
+  editStudent(studentId, data) {
+    return this.http.put<any>("/api/student/" + studentId, data);
+  }
 }

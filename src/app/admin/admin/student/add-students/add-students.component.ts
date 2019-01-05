@@ -13,7 +13,7 @@ export class AddStudentsComponent implements OnInit {
   constructor(private studentService: StudentService) { }
 
   private student: Students = {
-    studentIndexNumber: "",
+    studentRegistrationNumber: "",
     studentName: "",
     studentDOB: "",
     studentAge: ""
@@ -25,6 +25,7 @@ export class AddStudentsComponent implements OnInit {
 
   addStudent(form: any) {
     if (!form.invalid) {
+      //this.formatInputs();
       this.studentService.addStudent(this.student).subscribe(data => {
         console.log(data);
 
@@ -34,4 +35,12 @@ export class AddStudentsComponent implements OnInit {
     }
 
   }
+
+  // formatInputs(){
+  //   this.student.studentRegistrationNumber=this.student.studentRegistrationNumber.toUpperCase();
+  //   this.student.studentName=this.student.studentName.toUpperCase();
+  //   this.student.studentDOB=this.student.studentDOB.toUpperCase();
+  //   console.log(String(this.student.));
+
+  // }
 }
