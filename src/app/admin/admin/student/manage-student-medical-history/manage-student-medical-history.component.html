@@ -28,16 +28,17 @@
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
-            <input matInput #stdDOB="ngModel" name="studentDOB" [(ngModel)]="student.studentDOB" placeholder="Student DOB"
-              required>
-
+            <input matInput #stdDOB="ngModel" [matDatepicker]="picker" name="studentDOB" [(ngModel)]="student.studentDOB"
+              placeholder="Student DOB" required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
             <mat-error *ngIf="stdDOB.errors?.required"><strong>Date of Birth is required.</strong>
             </mat-error>
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
             <input matInput #stdAge="ngModel" name="studentAge" [(ngModel)]="student.studentAge" placeholder="Student Age"
-              required>
+              required pattern="^[0-9].*$">
 
             <mat-error *ngIf="stdAge.errors?.required"><strong>Student age is required.</strong>
             </mat-error>
