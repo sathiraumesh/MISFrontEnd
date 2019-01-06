@@ -7,39 +7,57 @@
     <mat-card-content>
       <mat-list>
         <mat-list-item>
-          Student Registration Number{{student.studentRegistrationNumber}}
+          <mat-chip-list>
+            <mat-chip color="primary" disabled><strong>Student Registration Number</strong></mat-chip>
+          </mat-chip-list>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{student.studentRegistrationNumber}}
         </mat-list-item>
       </mat-list>
       <mat-list>
         <mat-list-item>
-          Student Name{{student.studentName}}
+          <mat-chip-list>
+            <mat-chip color="primary" disabled><strong>Student Name</strong></mat-chip>
+          </mat-chip-list>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{student.studentName}}
+
         </mat-list-item>
       </mat-list>
       <mat-list>
         <mat-list-item>
-          Student Name{{student.studentDOB}}
+          <mat-chip-list>
+            <mat-chip color="primary" disabled><strong>Student DOB</strong></mat-chip>
+          </mat-chip-list>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{student.studentDOB}}
+
         </mat-list-item>
       </mat-list>
       <mat-list>
         <mat-list-item>
-          Student Name{{student.studentAge}}
+          <mat-chip-list>
+            <mat-chip color="primary" disabled><strong>Student Age</strong></mat-chip>
+          </mat-chip-list>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{student.studentAge}}
+
+        </mat-list-item>
+        <mat-list-item>
+          <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="20px" fxFlex="100">
+
+            <!-- <div>
+                  <button mat-raised-button color="warn" (click)="resetPassword()">Reset Password</button>
+                </div> -->
+            <div>
+              <button mat-raised-button color="basic" (click)=editOpenDialog()>Edit</button>
+            </div>
+            <div>
+              <button mat-raised-button color="warn" (click)=openDialog()>Delete</button>
+            </div>
+
+          </div>
         </mat-list-item>
       </mat-list>
     </mat-card-content>
   </mat-card>
 
-  <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="20px" fxFlex="100">
 
-    <!-- <div>
-      <button mat-raised-button color="warn" (click)="resetPassword()">Reset Password</button>
-    </div> -->
-    <div>
-      <button mat-raised-button color="basic" (click)=editOpenDialog()>Edit</button>
-    </div>
-    <div>
-      <button mat-raised-button color="warn" (click)=openDialog()>Delete</button>
-    </div>
-
-  </div>
 
 </div>

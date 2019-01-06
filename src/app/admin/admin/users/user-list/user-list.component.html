@@ -5,8 +5,6 @@
 
     </div>
 
-
-
   </div>
 </div>
 <div fxLayout="row" fxLayoutAlign="center">
@@ -21,8 +19,6 @@
       search
     </mat-card-header>
   </mat-card>
-
-
 
 </div>
 
@@ -46,9 +42,6 @@
         </mat-select>
       </mat-form-field>
 
-
-
-
       <mat-form-field class="example-full-width">
         <input #fil1 matInput placeholder="nic" (keyup)="selectByNIC($event)" name="nic">
       </mat-form-field>
@@ -60,7 +53,6 @@
       <mat-form-field class="example-full-width">
         <input #fil3 matInput placeholder="last name" (keyup)="selectByLastName($event)">
       </mat-form-field>
-
 
       <button mat-stroked-button (click)="clearFilters(fil1,fil2,fil3,fil0)">Clear Filters</button>
 

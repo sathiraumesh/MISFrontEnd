@@ -16,15 +16,15 @@ export class StudentService {
     return this.http.get<any>("/api/student/");
   }
 
-  getStudent(studentId) {
-    return this.http.get<any>("/api/student/" + studentId);
+  getStudent(id) {
+    return this.http.get<any>("/api/student/" + id);
   }
 
-  deleteStudent(studentId) {
-    return this.http.delete<any>("/api/student/" + studentId);
+  deleteStudent(id) {
+    return this.http.delete<any>("/api/student/" + id);
   }
 
-  editStudent(studentId, data) {
-    return this.http.put<any>("/api/student/" + studentId, data);
+  editStudent(id, data) {
+    return this.http.put<any>("/api/student/" + id, data);
   }
 }

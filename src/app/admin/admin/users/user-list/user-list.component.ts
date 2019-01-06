@@ -125,7 +125,6 @@ export class UserListComponent implements OnInit {
     this.rowSelected = false;
     this.gridApi.onFilterChanged();
 
-
   }
 
   selectAll() {

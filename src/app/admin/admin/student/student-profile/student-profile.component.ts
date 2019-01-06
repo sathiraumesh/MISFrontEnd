@@ -18,10 +18,10 @@ export class StudentProfileComponent implements OnInit {
   constructor(private activeRoute: ActivatedRoute, private studentService: StudentService, private dialog: MatDialog, private router: Router) { }
 
   ngOnInit() {
-    this.getRouterParams();
+    this.getRouteParams();
   }
 
-  getRouterParams() {
+  getRouteParams() {
     console.log(this.activeRoute.snapshot.params.id);
     this.studentService.getStudent(this.activeRoute.snapshot.params.id).subscribe(data => {
       console.log(data);
@@ -64,18 +64,19 @@ export class StudentProfileComponent implements OnInit {
     });
 
     dialogRef.disableClose = true;
-    dialogRef.afterClosed().subscribe(result => {
+    // dialogRef.afterClosed().subscribe(result => {
 
-      if (result.edited) {
-        this.studentService.editStudent(this.activeRoute.snapshot.params.id, result.data).subscribe(data => {
-          console.log(result.data);
-          this.student = result.data;
-        }, err => {
-          console.log(err);
-        });
-      } else {
+    //   if (result.edited) {
+    //     this.studentService.editStudent(this.activeRoute.snapshot.params.id, result.data).subscribe(data => {
+    //       console.log(result.data);
+    //       //console.log(this.activeRoute.snapshot.params.id);
+    //       this.student = result.data;
+    //     }, err => {
+    //       console.log(err);
+    //     });
+    //   } else {
 
-      }
-    });
+    //   }
+    // });
   }
 }

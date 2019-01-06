@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-//import{Student}from '../../../models';
+import { Students } from '../../../models';
+import { StudentService } from '../../../core/student.service';
 
 @Component({
   selector: 'app-add-student',
@@ -13,15 +14,15 @@ export class AddStudentComponent implements OnInit {
   ngOnInit() {
   }
 
-//   onClickMe(args) {
-//     const self = this;
-//     const filename = 'exportExcel.xlsx';
-//     const json = JSON.stringify(self.spread.toJSON());
-//     self.excelIO.save(json, function (blob) {
-//       saveAs(blob, filename);
-//   }, function (e) {
-//       console.log(e);
-//   });
-//   }
+  //   onClickMe(args) {
+  //     const self = this;
+  //     const filename = 'exportExcel.xlsx';
+  //     const json = JSON.stringify(self.spread.toJSON());
+  //     self.excelIO.save(json, function (blob) {
+  //       saveAs(blob, filename);
+  //   }, function (e) {
+  //       console.log(e);
+  //   });
+  //   }
 
 }

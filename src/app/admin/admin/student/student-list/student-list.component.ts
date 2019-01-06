@@ -13,12 +13,10 @@ export class StudentListComponent implements OnInit {
   constructor(private studentService: StudentService, private router: Router) { }
 
 
-
-
   ngOnInit() {
 
     this.columnDefs = [
-      { headerName: 'Student ID', field: 'studentId', },
+      { headerName: 'Student Registration Number', field: 'studentRegistrationNumber', },
       { headerName: 'Student Name', field: 'studentName', },
       { headerName: 'Student DOB', field: 'studentDOB', },
       { headerName: 'Student Age', field: 'studentAge' }
@@ -52,7 +50,7 @@ export class StudentListComponent implements OnInit {
     let selctedRows = this.gridApi.getSelectedRows();
     selctedRows.forEach(element => {
       this.selectedStudent = element;
-      this.studentId = this.selectedStudent.studentId;
+      this.studentId = this.selectedStudent._id;
       console.log(this.studentId);
 
       this.rowSelected = true;
@@ -79,7 +77,7 @@ export class StudentListComponent implements OnInit {
   selectByStudentID(event) {
     console.log(event.target.value);
     var selctedRows = this.gridApi.deselectAll();
-    var roleFilterComponent = this.gridApi.getFilterInstance("studentId");
+    var roleFilterComponent = this.gridApi.getFilterInstance("studentRegistrationNumber");
 
     roleFilterComponent.setModel({
       type: "contains",
@@ -104,12 +102,26 @@ export class StudentListComponent implements OnInit {
 
   }
 
+  selectByFaculty(event) {
+    console.log(event.target.value);
+    var selctedRows = this.gridApi.deselectAll();
+    var roleFilterComponent = this.gridApi.getFilterInstance("Faculty");
+
+    roleFilterComponent.setModel({
+      type: "contains",
+      filter: event.target.value
+    });
+    this.rowSelected = false;
+    this.gridApi.onFilterChanged();
+
+
+  }
   clearFilters(fil1, fil2) {
     fil1.value = "";
     fil2.value = "";
 
     var selctedRows = this.gridApi.deselectAll();
-    var roleFilterComponent = this.gridApi.getFilterInstance("studentId");
+    var roleFilterComponent = this.gridApi.getFilterInstance("studentRegistrationNumber");
 
     roleFilterComponent.setModel({
       type: "contains",

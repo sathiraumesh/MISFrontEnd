@@ -18,7 +18,7 @@ export class UserComponent implements OnInit {
 
   ngOnInit() {
     this.getRouteParams();
-  } 
+  }
 
 
 
@@ -83,13 +83,13 @@ export class UserComponent implements OnInit {
   }
 
 
-  resetPassword(){
-    var data={
-      name:"sathira"
+  resetPassword() {
+    var data = {
+      name: "sathira"
     };
-    this.userService.resetUsersPassword(data,this.activeRoute.snapshot.params.id).subscribe(data=>{
+    this.userService.resetUsersPassword(data, this.activeRoute.snapshot.params.id).subscribe(data => {
 
-    },err=>{
+    }, err => {
 
     });
   }

@@ -22,15 +22,28 @@ export class ManageStudentMedicalHistoryComponent implements OnInit {
   ngOnInit() {
   }
 
+  private studentData;
+  private studentId;
+
   editStudent(form, data) {
 
+    // if (!form.invalid) {
+    //   this.dialogRef.close({
+    //     edited: true,
+    //     data: data
+    //   })
+    // }
+    // console.log(form);
+
     if (!form.invalid) {
-      this.dialogRef.close({
-        edited: true,
-        data: data
-      })
+      this.studentData = data;
+      this.studentId = data._id;
+      this.studentService.editStudent(this.studentId, this.studentData).subscribe(data => {
+        console.log(data);
+      }, err => {
+        console.log(err);
+      });
     }
-    console.log(form);
   }
 
   closeDialog() {
