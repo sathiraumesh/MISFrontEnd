@@ -21,7 +21,7 @@
 
           <mat-form-field class="example-full-width">
             <input matInput #stdName="ngModel" name="studentName" [(ngModel)]="student.studentName" placeholder="Student Name"
-              required>
+              required pattern="^[A-Za-z].*$">
 
             <mat-error *ngIf="stdName.errors?.required"><strong>Student Name is required.</strong>
             </mat-error>
@@ -45,7 +45,135 @@
             </mat-error>
           </mat-form-field>
 
+          <mat-form-field class="example-full-width">
+            <mat-select #gender="ngModel" [(value)]="gender.selected" [(ngModel)]="student.gender" placeholder="Gender"
+              name="gender" required>
+              <mat-option value="Male">Male</mat-option>
+              <mat-option value="Female">female</mat-option>
+            </mat-select>
+            <mat-error *ngIf="gender.errors?.required">
+              <strong>Gender is required.</strong>
+            </mat-error>
+          </mat-form-field>
 
+          <mat-form-field class="example-full-width">
+            <input matInput #stdFaculty="ngModel" name="studentFaculty" [(ngModel)]="student.studentFaculty"
+              placeholder="Student Faculty" required pattern="^[A-Za-z].*$">
+
+            <mat-error *ngIf="stdFaculty.errors?.required"><strong>Student Faculty is required.</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-select #marritalStatus="ngModel" [(value)]="marritalStatus.selected" [(ngModel)]="student.marritalStatus"
+              placeholder="Student Marrital Status" name="marritalStatus" required>
+              <mat-option value="Married">Married</mat-option>
+              <mat-option value="Unmarried">Unmarried</mat-option>
+            </mat-select>
+            <mat-error *ngIf="marritalStatus.errors?.required">
+              <strong>Marrital Status is required.</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput #stdNationality="ngModel" name="studentNationality" [(ngModel)]="student.studentNationality"
+              placeholder="Student Nationality" required pattern="^[A-Za-z].*$">
+
+            <mat-error *ngIf="stdNationality.errors?.required"><strong>Student Nationality is required.</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput #stdPositionOfFamily="ngModel" name="studentPositionOfFamily" [(ngModel)]="student.studentPositionOfFamily"
+              placeholder="Student Position of the Family" required pattern="^[0-9].*$">
+
+            <mat-error *ngIf="stdPositionOfFamily.errors?.required"><strong>Student Position of the Family is required.</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput #stdAddress="ngModel" name="studentAddress" [(ngModel)]="student.studentAddress"
+              placeholder="Student Address" required pattern="^[A-Za-z0-9\,].*$">
+
+            <mat-error *ngIf="stdAddress.errors?.required"><strong>Student Address is required.</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput #stdTermAddress="ngModel" name="studentTermAddress" [(ngModel)]="student.studentTermAddress"
+              placeholder="Student During Term Address" required pattern="^[A-Za-z0-9\,].*$">
+
+            <mat-error *ngIf="stdTermAddress.errors?.required"><strong>Student During Term Address is required.</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput #stdParentGuardian="ngModel" name="studentParentGuardian" [(ngModel)]="student.studentParentGuardian"
+              placeholder="Parent or Guardian of the Student" required pattern="^[A-Za-z].*$">
+
+            <mat-error *ngIf="stdParentGuardian.errors?.required"><strong>Parent or Guardian of the Student is
+                required.</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput #stdBoardingRelative="ngModel" name="studentBoardingRelative" [(ngModel)]="student.studentBoardingRelative"
+              placeholder="Boarding or Relative" required="false" required pattern="^[A-Za-z].*$">
+
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput #stdAmountPaid="ngModel" name="studentAmountPaid" [(ngModel)]="student.studentAmountPaid"
+              placeholder="Amount Paid for Month" required="false" required pattern="^[0-9].*$">
+
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput #stdOccupationFather="ngModel" name="studentOccupationFather" [(ngModel)]="student.studentOccupationFather"
+              placeholder="Occupation of the Father of the Student" required pattern="^[A-Za-z].*$">
+
+            <mat-error *ngIf="stdOccupationFather.errors?.required"><strong>Occupation of the Father of the Student is
+                required.</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput #stdOccupationMother="ngModel" name="studentOccupationMother" [(ngModel)]="student.studentOccupationMother"
+              placeholder="Occupation of the Mother of the Student" required pattern="^[A-Za-z].*$">
+
+            <mat-error *ngIf="stdOccupationMother.errors?.required"><strong>Occupation of the Mother of the Student is
+                required.</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-select #bursary="ngModel" [(value)]="bursary.selected" [(ngModel)]="student.studentBursary"
+              placeholder="Bursary of the Student" name="studentBursary" required>
+              <mat-option value="Yes">Yes</mat-option>
+              <mat-option value="No">No</mat-option>
+            </mat-select>
+            <mat-error *ngIf="bursary.errors?.required">
+              <strong>Bursary of the Student is required.</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput #stdSchool="ngModel" name="studentSchool" [(ngModel)]="student.studentSchool" placeholder="School of the Student"
+              required pattern="^[A-Za-z].*$">
+
+            <mat-error *ngIf="stdSchool.errors?.required"><strong>School of the Student is
+                required.</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input matInput #stdGamesPlayed="ngModel" name="gamesPlayed" [(ngModel)]="student.gamesPlayed" placeholder="Games played at school"
+              required="false" required pattern="^[A-Za-z0-9].*$">
+
+            <mat-error *ngIf="stdGamesPlayed.errors?.required"><strong>Games played at school are
+                required.</strong>
+            </mat-error>
+          </mat-form-field>
 
           <div fxLayout="row" class="add-button">
             <button mat-raised-button color="primary" fxFlex="40">Add Students</button>

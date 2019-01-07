@@ -19,7 +19,22 @@ export class StudentListComponent implements OnInit {
       { headerName: 'Student Registration Number', field: 'studentRegistrationNumber', },
       { headerName: 'Student Name', field: 'studentName', },
       { headerName: 'Student DOB', field: 'studentDOB', },
-      { headerName: 'Student Age', field: 'studentAge' }
+      { headerName: 'Student Age', field: 'studentAge' },
+      { headerName: 'Student Gender', field: 'gender' },
+      { headerName: 'Student Faculty', field: 'studentFaculty' },
+      { headerName: 'Student Marrital Status', field: 'marritalStatus' },
+      { headerName: 'Student Nationality', field: 'studentNationality' },
+      { headerName: 'Student Position of the Family', field: 'studentPositionOfFamily' },
+      { headerName: 'Student Address', field: 'studentAddress' },
+      { headerName: 'Student Term Address', field: 'studentTermAddress' },
+      { headerName: 'Student Parent or Guardian', field: 'studentParentGuardian' },
+      { headerName: 'Student Boarding or Relative', field: 'studentBoardingRelative' },
+      { headerName: 'Student Amount Paid', field: 'studentAmountPaid' },
+      { headerName: 'Occupation of Father', field: 'studentOccupationFather' },
+      { headerName: 'Occupation of Mother', field: 'studentOccupationMother' },
+      { headerName: 'Student Bursary', field: 'studentBursary' },
+      { headerName: 'Student School', field: 'studentSchool' },
+      { headerName: 'Games Played', field: 'gamesPlayed' }
     ];
   }
 
@@ -37,7 +52,6 @@ export class StudentListComponent implements OnInit {
   private rowSelected: boolean = false;
   private selectedRole = "ALL";
   private searchToggle = false;
-  private searchNic = null;
 
 
   onGridReady(params) {

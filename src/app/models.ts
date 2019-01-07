@@ -14,5 +14,5 @@ export class Drug {
 }
 
 export class Students {
-    constructor(public studentRegistrationNumber: string, public studentName: String, public studentDOB: string, public studentAge: String) { }
+    constructor(public studentRegistrationNumber: string, public studentName: String, public studentDOB: string, public studentAge: String, public gender: string, public studentFaculty: string, public marritalStatus: string, public studentNationality: string, public studentPositionOfFamily: number, public studentAddress: string, public studentTermAddress: string, public studentParentGuardian: string, public studentBoardingRelative: string, public studentAmountPaid: number, public studentOccupationFather: string, public studentOccupationMother: string, public studentBursary: string, public studentSchool: string, public gamesPlayed: string ) { }
 }

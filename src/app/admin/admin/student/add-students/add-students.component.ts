@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from '../../../../core/student.service';
 import { Students } from '../../../../models';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,17 +11,37 @@ import { Students } from '../../../../models';
 })
 export class AddStudentsComponent implements OnInit {
 
-  constructor(private studentService: StudentService) { }
+  constructor(private studentService: StudentService, private router: Router) { }
 
   private student: Students = {
     studentRegistrationNumber: "",
     studentName: "",
     studentDOB: "",
-    studentAge: ""
+    studentAge: "",
+    gender: "",
+    studentFaculty: "",
+    marritalStatus: "",
+    studentNationality: "",
+    studentPositionOfFamily: null,
+    studentAddress: "",
+    studentTermAddress: "",
+    studentParentGuardian: "",
+    studentBoardingRelative: "",
+    studentAmountPaid: null,
+    studentOccupationFather: "",
+    studentOccupationMother: "",
+    studentBursary: "",
+    studentSchool: "",
+    gamesPlayed: ""
 
   };
 
   ngOnInit() {
+  }
+
+  goToPath() {
+    let path = "/admin/students/";
+    this.router.navigate([path]);
   }
 
   addStudent(form: any) {
@@ -28,7 +49,7 @@ export class AddStudentsComponent implements OnInit {
       //this.formatInputs();
       this.studentService.addStudent(this.student).subscribe(data => {
         console.log(data);
-
+        this.goToPath();
       }, err => {
         console.log(err);
       });

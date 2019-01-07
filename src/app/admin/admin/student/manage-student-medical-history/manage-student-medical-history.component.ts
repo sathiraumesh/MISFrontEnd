@@ -16,7 +16,22 @@ export class ManageStudentMedicalHistoryComponent implements OnInit {
     studentRegistrationNumber: "",
     studentName: "",
     studentDOB: "",
-    studentAge: ""
+    studentAge: "",
+    gender: "",
+    studentFaculty: "",
+    marritalStatus: "",
+    studentNationality: "",
+    studentPositionOfFamily: null,
+    studentAddress: "",
+    studentTermAddress: "",
+    studentParentGuardian: "",
+    studentBoardingRelative: "",
+    studentAmountPaid: null,
+    studentOccupationFather: "",
+    studentOccupationMother: "",
+    studentBursary: "",
+    studentSchool: "",
+    gamesPlayed: ""
   };
 
   ngOnInit() {
